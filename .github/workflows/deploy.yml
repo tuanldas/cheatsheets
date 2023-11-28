@@ -8,7 +8,7 @@ on:
 
 env:
   INSTANCE: Writerside/hi
-  ARTIFACT: cheatsheets.zip
+  ARTIFACT: webHelpCheatsheets-all.zip
   DOCKER_VERSION: 232.10165.1
   ALGOLIA_ARTIFACT: algolia-indexes-HI.zip
   SSH_HOST: ${{ secrets.HOST }}
