@@ -57,8 +57,15 @@ jobs:
               echo "Is a directory."
             fi
 
-      - name: Deploy with rsync
-        run: rsync -avz -e "ssh -p ${{ env.SSH_PORT }}" artifacts/${{ env.ARTIFACT }} ${{ env.SSH_USERNAME }}@${{ secrets.HOST }}:${{ env.PROJECT_PATH }}/
+      - name: rsync deployments
+        uses: burnett01/rsync-deployments@6.0.0
+        with:
+          switches: -avzr --delete
+          path: artifacts/${{ env.ARTIFACT }}
+          remote_path: ${{ env.PROJECT_PATH }}/
+          remote_host: ${{ secrets.HOST }}
+          remote_user: ${{ env.SSH_USERNAME }}
+          remote_key: ${{ secrets.SSH_PRIVATE_KEY }}
 
       - name: Deploy
         uses: appleboy/ssh-action@v1.0.0
