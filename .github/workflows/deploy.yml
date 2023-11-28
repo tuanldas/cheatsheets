@@ -41,7 +41,9 @@ jobs:
         run: ssh-keyscan -p ${{ env.SSH_PORT }} -H ${{ secrets.HOST }} >> ~/.ssh/known_hosts
 
       - name: Tun
-        run: ls -al
+        run: | 
+          cd artifacts
+          ls -al
 
       - name: Kiểm tra folder build
         uses: appleboy/ssh-action@v1.0.0
