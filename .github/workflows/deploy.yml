@@ -24,7 +24,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Build Writerside docs using Docker
+      - name: Build Writerside
         uses: JetBrains/writerside-github-action@v4
         with:
           instance: ${{ env.INSTANCE }}
@@ -40,10 +40,7 @@ jobs:
       - name: Adding Known Hosts
         run: ssh-keyscan -p ${{ env.SSH_PORT }} -H ${{ secrets.HOST }} >> ~/.ssh/known_hosts
 
-      - name: Deploy with rsync
-        run: rsync -avz -e "ssh -p ${{ env.SSH_PORT }}" artifacts/${{ env.ALGOLIA_ARTIFACT }} ${{ env.SSH_USERNAME }}@${{ secrets.HOST }}:${{ env.PROJECT_PATH }}/${{ env.ALGOLIA_ARTIFACT }}
-
-      - name: executing remote ssh commands using password
+      - name: Kiểm tra folder build
         uses: appleboy/ssh-action@v1.0.0
         env:
           PROJECT_PATH: ${{ env.PROJECT_PATH }}
@@ -53,4 +50,26 @@ jobs:
           key: ${{ env.SSH_PRIVATE_KEY }}
           port: ${{ secrets.PORT }}
           script:
-            cd $PROJECT_PATH
+            do
+              if [ -d "${{PROJECT_PATH}}" ]; then
+                echo "Is a directory."
+              else
+                mkdir ${{PROJECT_PATH}}
+                echo "Is a directory."
+              fi
+            done
+
+#      - name: Deploy with rsync
+#        run: rsync -avz -e "ssh -p ${{ env.SSH_PORT }}" artifacts/${{ env.ALGOLIA_ARTIFACT }} ${{ env.SSH_USERNAME }}@${{ secrets.HOST }}:${{ env.PROJECT_PATH }}/${{ env.ALGOLIA_ARTIFACT }}
+#
+#      - name: executing remote ssh commands using password
+#        uses: appleboy/ssh-action@v1.0.0
+#        env:
+#          PROJECT_PATH: ${{ env.PROJECT_PATH }}
+#        with:
+#          host: ${{ secrets.HOST }}
+#          username: ${{ secrets.USERNAME }}
+#          key: ${{ env.SSH_PRIVATE_KEY }}
+#          port: ${{ secrets.PORT }}
+#          script:
+#            cd $PROJECT_PATH
