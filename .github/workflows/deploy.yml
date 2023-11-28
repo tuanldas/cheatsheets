@@ -50,11 +50,9 @@ jobs:
           key: ${{ env.SSH_PRIVATE_KEY }}
           port: ${{ secrets.PORT }}
           script: |
-            do
-              if [ -d "${{PROJECT_PATH}}" ]; then
-                echo "Is a directory."
-              else
-                mkdir ${{PROJECT_PATH}}
-                echo "Is a directory."
-              fi
-            done
+            if [ -d "/home/ubuntu/services/tuanldas/cheatsheets/builds" ]; then
+              echo "Is a directory."
+            else
+              mkdir /home/ubuntu/services/tuanldas/cheatsheets/builds
+              echo "Is a directory."
+            fi
