@@ -90,7 +90,7 @@ jobs:
           port: ${{ secrets.PORT }}
           script: |
             cd ${{ env.PROJECT_PATH }}
-            docker container down -v --rmi all
+            docker compose down -v --rmi all
 
       - name: Khởi động lại các dịch vụ
         uses: appleboy/ssh-action@v1.0.0
@@ -101,4 +101,4 @@ jobs:
           port: ${{ secrets.PORT }}
           script: |
             cd ${{ env.PROJECT_PATH }}
-            docker container up -d
+            docker compose up -d
