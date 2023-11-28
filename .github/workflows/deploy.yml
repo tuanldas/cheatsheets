@@ -58,9 +58,9 @@ jobs:
             fi
 
       - name: Deploy with rsync
-        run: rsync -avz -e "ssh -p ${{ env.SSH_PORT }}" artifacts/${{ env.ALGOLIA_ARTIFACT }} ${{ env.SSH_USERNAME }}@${{ secrets.HOST }}:${{ env.PROJECT_PATH }}/${{ env.ALGOLIA_ARTIFACT }}
+        run: rsync -avz -e "ssh -p ${{ env.SSH_PORT }}" artifacts/${{ env.ARTIFACT }} ${{ env.SSH_USERNAME }}@${{ secrets.HOST }}:${{ env.PROJECT_PATH }}/${{ env.ALGOLIA_ARTIFACT }}
 
-      - name: executing remote ssh commands using password
+      - name: Deploy
         uses: appleboy/ssh-action@v1.0.0
         env:
           PROJECT_PATH: ${{ env.PROJECT_PATH }}
@@ -69,5 +69,6 @@ jobs:
           username: ${{ secrets.USERNAME }}
           key: ${{ env.SSH_PRIVATE_KEY }}
           port: ${{ secrets.PORT }}
-          script:
+          script: |
             cd $PROJECT_PATH
+            
