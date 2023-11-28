@@ -14,6 +14,7 @@ env:
   SSH_USERNAME: ${{ secrets.SSH_USER }}
   SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
   SSH_PORT: ${{ secrets.SSH_PORT }}
+  PROJECT_PATH: /home/ubuntu/services/tuanldas/cheatsheets
   PROJECT_PATH_BUILDS: /home/ubuntu/services/tuanldas/cheatsheets/builds
   PROJECT_PATH_SRC: /home/ubuntu/services/tuanldas/cheatsheets/src
 
@@ -67,7 +68,7 @@ jobs:
           key: ${{ env.SSH_PRIVATE_KEY }}
           port: ${{ secrets.PORT }}
           script: |
-            cd $PROJECT_PATH_BUILDS
+            cd ${{ env.PROJECT_PATH_BUILDS }}
             unzip -o ${{ env.PROJECT_PATH_BUILDS }}/${{ env.ARTIFACT }} -d ${{ env.PROJECT_PATH_SRC }}
 
       - name: Xóa các bản build
@@ -80,3 +81,13 @@ jobs:
           script: |
             rm -rf ${{ env.PROJECT_PATH_BUILDS }}
 
+      - name: Dừng các container đang chạy
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ env.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.PORT }}
+          script: |
+            cd ${{ env.PROJECT_PATH }}
+            docker container down

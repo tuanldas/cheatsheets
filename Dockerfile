@@ -5,7 +5,3 @@ WORKDIR /app/html
 RUN apt-get update -y
 
 RUN npm i -g http-server
-
-COPY ./ ./
-
-CMD ["http-server", "./dir"]
