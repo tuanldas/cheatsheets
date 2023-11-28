@@ -8,7 +8,7 @@ on:
 
 env:
   INSTANCE: Writerside/hi
-  ARTIFACT: webHelpHI2-all.zip
+  ARTIFACT: cheatsheets.zip
   DOCKER_VERSION: 232.10165.1
   ALGOLIA_ARTIFACT: algolia-indexes-HI.zip
 
@@ -41,6 +41,15 @@ jobs:
           name: algolia-indexes
           path: artifacts/${{ env.ALGOLIA_ARTIFACT }}
           retention-days: 7
+
+      - name: Copy single file to remote
+        uses: garygrossgarten/github-action-scp@release
+        with:
+          local: artifacts/${{ env.ALGOLIA_ARTIFACT }}
+          remote: /home/ubuntu/services
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.SSH_USER }}
+          privateKey: ${{ secrets.SSH_PRIVATE_KEY }}
 
   test:
     needs: build
