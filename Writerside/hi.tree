@@ -8,6 +8,6 @@
 
     <toc-element topic="Overview.md"/>
     <toc-element topic="Tailwindcss.md">
-        <toc-element topic="How-to.md"/>
+        <toc-element topic="Spacing.md"/>
     </toc-element>
 </instance-profile>

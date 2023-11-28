@@ -1,3 +1,0 @@
-# About asdf
-
-Start typing here...
