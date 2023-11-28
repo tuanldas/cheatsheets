@@ -11,4 +11,6 @@
         <toc-element topic="Tailwindcss-Spacing.md"/>
         <toc-element topic="Tailwindcss-Font.md"/>
     </toc-element>
+    <toc-element topic="Tmux.md"/>
+    <toc-element topic="Sublime-Text.md"/>
 </instance-profile>
