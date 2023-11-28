@@ -11,6 +11,11 @@ env:
   ARTIFACT: cheatsheets.zip
   DOCKER_VERSION: 232.10165.1
   ALGOLIA_ARTIFACT: algolia-indexes-HI.zip
+  SSH_HOST: ${{ secrets.HOST }}
+  SSH_USERNAME: ${{ secrets.SSH_USER }}
+  SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+  SSH_PORT: ${{ secrets.SSH_PORT }}
+  PROJECT_PATH: /home/ubuntu/services/tuanldas/cheatsheets/builds
 
 jobs:
   build:
@@ -29,14 +34,27 @@ jobs:
       - name: Install SSH Key
         uses: shimataro/ssh-key-action@v2
         with:
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          key: ${{ env.SSH_PRIVATE_KEY }}
           known_hosts: unnecessary
 
       - name: Adding Known Hosts
-        run: ssh-keyscan -p ${{ secrets.SSH_PORT }} -H ${{ secrets.HOST }} >> ~/.ssh/known_hosts
+        run: ssh-keyscan -p ${{ env.SSH_PORT }} -H ${{ secrets.HOST }} >> ~/.ssh/known_hosts
 
       - name: Deploy with rsync
-        run: rsync -avz -e "ssh -p ${{ secrets.SSH_PORT }}" artifacts/${{ env.ALGOLIA_ARTIFACT }} ${{ secrets.SSH_USER }}@${{ secrets.HOST }}:/home/ubuntu/services
+        run: rsync -avz -e "ssh -p ${{ env.SSH_PORT }}" artifacts/${{ env.ALGOLIA_ARTIFACT }} ${{ env.SSH_USERNAME }}@${{ secrets.HOST }}:${{ env.PROJECT_PATH }}
+
+      - name: executing remote ssh commands using password
+        uses: appleboy/ssh-action@v1.0.0
+        env:
+          PROJECT_PATH: ${{ env.PROJECT_PATH }}
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ env.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.PORT }}
+          script:
+            cd $PROJECT_PATH
+            mkdir aaaa
 
   test:
     needs: build
