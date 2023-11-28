@@ -43,8 +43,6 @@ jobs:
 
       - name: Kiểm tra folder build
         uses: appleboy/ssh-action@v1.0.0
-        env:
-          PROJECT_PATH_BUILDS: ${{ env.PROJECT_PATH_BUILDS }}
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
@@ -63,8 +61,6 @@ jobs:
 
       - name: Deploy
         uses: appleboy/ssh-action@v1.0.0
-        env:
-          PROJECT_PATH_BUILDS: ${{ env.PROJECT_PATH_BUILDS }}
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
@@ -72,4 +68,4 @@ jobs:
           port: ${{ secrets.PORT }}
           script: |
             cd $PROJECT_PATH_BUILDS
-            unzip ${{ env.PROJECT_PATH_BUILDS }}/${{ env.ARTIFACT }} -d ${{ env.PROJECT_PATH_SRC }}
+            unzip -o ${{ env.PROJECT_PATH_BUILDS }}/${{ env.ARTIFACT }} -d ${{ env.PROJECT_PATH_SRC }}
