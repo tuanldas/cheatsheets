@@ -2,5 +2,10 @@ services:
   app:
     build:
       context: .
-    ports:
-      - 8081:8080
+    networks:
+      - publish
+
+networks:
+  publish:
+    name: ${PUBLISH_NETWORK}
+    external: true
