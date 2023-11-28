@@ -1,0 +1,43 @@
+# Dictionaries
+
+Defining
+---------
+
+```bash
+declare -A sounds
+```
+
+```bash
+sounds[dog]="bark"
+sounds[cow]="moo"
+sounds[bird]="tweet"
+sounds[wolf]="howl"
+```
+
+Working with dictionaries
+---------
+
+```bash
+echo ${sounds[dog]} # Dog's sound
+echo ${sounds[@]}   # All values
+echo ${!sounds[@]}  # All keys
+echo ${#sounds[@]}  # Number of elements
+unset sounds[dog]   # Delete dog
+```
+
+Iteration
+---------
+
+```bash
+for val in "${sounds[@]}"; do
+    echo $val
+done
+```
+
+---
+
+```bash
+for key in "${!sounds[@]}"; do
+    echo $key
+done
+```
