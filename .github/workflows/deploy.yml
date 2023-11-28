@@ -2,7 +2,7 @@ name: Build documentation
 
 on:
   push:
-    branches: ["main"]
+    branches: [ "main" ]
 
   workflow_dispatch:
 
@@ -26,30 +26,32 @@ jobs:
           artifact: ${{ env.ARTIFACT }}
           docker-version: ${{ env.DOCKER_VERSION }}
 
-      - name: Upload documentation
-        uses: actions/upload-artifact@v3
+      - name: Install SSH Key
+        uses: shimataro/ssh-key-action@v2
         with:
-          name: docs
-          path: |
-            artifacts/${{ env.ARTIFACT }}
-            artifacts/report.json
-          retention-days: 7
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          known_hosts: unnecessary
 
-      - name: Upload algolia-indexes
-        uses: actions/upload-artifact@v3
-        with:
-          name: algolia-indexes
-          path: artifacts/${{ env.ALGOLIA_ARTIFACT }}
-          retention-days: 7
+      - name: Adding Known Hosts
+        run: ssh-keyscan -p ${{ secrets.SSH_PORT }} -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
 
-      - name: Copy single file to remote
-        uses: garygrossgarten/github-action-scp@release
+      - name: Deploy with rsync
+        run: rsync -avz -e "ssh -p ${{ secrets.SSH_PORT }}" artifacts/${{ env.ALGOLIA_ARTIFACT }} ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/var/www/students.asyncjs.today/dist/
+
+      - name: Restart Server
+        uses: appleboy/ssh-action@master
         with:
-          local: artifacts/${{ env.ALGOLIA_ARTIFACT }}
-          remote: /home/ubuntu/services/${{ env.ALGOLIA_ARTIFACT }}
-          host: ${{ secrets.HOST }}
+          host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
-          privateKey: ${{ secrets.SSH_PRIVATE_KEY }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          script: |
+            cd /PATH_TO_FOLDER
+            git fetch origin master
+            git reset --hard FETCH_HEAD
+            git clean -d -f --exclude secrets
+            npm install --production
+            npm run restart
 
   test:
     needs: build
