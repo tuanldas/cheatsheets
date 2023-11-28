@@ -33,25 +33,10 @@ jobs:
           known_hosts: unnecessary
 
       - name: Adding Known Hosts
-        run: ssh-keyscan -p ${{ secrets.SSH_PORT }} -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
+        run: ssh-keyscan -p ${{ secrets.SSH_PORT }} -H ${{ secrets.HOST }} >> ~/.ssh/known_hosts
 
       - name: Deploy with rsync
-        run: rsync -avz -e "ssh -p ${{ secrets.SSH_PORT }}" artifacts/${{ env.ALGOLIA_ARTIFACT }} ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/var/www/students.asyncjs.today/dist/
-
-      - name: Restart Server
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          port: ${{ secrets.SSH_PORT }}
-          script: |
-            cd /PATH_TO_FOLDER
-            git fetch origin master
-            git reset --hard FETCH_HEAD
-            git clean -d -f --exclude secrets
-            npm install --production
-            npm run restart
+        run: rsync -avz -e "ssh -p ${{ secrets.SSH_PORT }}" artifacts/${{ env.ALGOLIA_ARTIFACT }} ${{ secrets.SSH_USER }}@${{ secrets.HOST }}:/home/ubuntu/services
 
   test:
     needs: build
