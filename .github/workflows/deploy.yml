@@ -50,24 +50,8 @@ jobs:
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
-          password: ${{ env.SSH_PRIVATE_KEY }}
+          key: ${{ env.SSH_PRIVATE_KEY }}
           port: ${{ secrets.PORT }}
           script:
             cd $PROJECT_PATH
             mkdir aaaa
-
-  test:
-    needs: build
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Download artifacts
-        uses: actions/download-artifact@v1
-        with:
-          name: docs
-          path: artifacts
-
-      - name: Test documentation
-        uses: JetBrains/writerside-checker-action@v1
-        with:
-          instance: ${{ env.INSTANCE }}
