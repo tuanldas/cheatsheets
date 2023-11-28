@@ -69,3 +69,14 @@ jobs:
           script: |
             cd $PROJECT_PATH_BUILDS
             unzip -o ${{ env.PROJECT_PATH_BUILDS }}/${{ env.ARTIFACT }} -d ${{ env.PROJECT_PATH_SRC }}
+
+      - name: Xóa các bản build
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ env.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.PORT }}
+          script: |
+            rm -rf ${{ env.PROJECT_PATH_BUILDS }}
+
