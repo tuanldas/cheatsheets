@@ -90,4 +90,15 @@ jobs:
           port: ${{ secrets.PORT }}
           script: |
             cd ${{ env.PROJECT_PATH }}
-            docker container down
+            docker container down -v --rmi all
+
+      - name: Khởi động lại các dịch vụ
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ env.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.PORT }}
+          script: |
+            cd ${{ env.PROJECT_PATH }}
+            docker container up -d
