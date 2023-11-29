@@ -29,4 +29,5 @@
     <toc-element topic="Cron.md"/>
     <toc-element topic="Homebrew.md"/>
     <toc-element topic="Sed.md"/>
+    <toc-element topic="Docker.md"/>
 </instance-profile>
