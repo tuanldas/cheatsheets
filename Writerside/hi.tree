@@ -41,4 +41,5 @@
     <toc-element topic="Chmod.md"/>
     <toc-element topic="SSH.md"/>
     <toc-element topic="Google-Search.md"/>
+    <toc-element topic="RegEX.md"/>
 </instance-profile>
