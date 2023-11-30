@@ -32,7 +32,7 @@ export const USERS = "users";
 export const GET_USER_BY_ID = `${USERS}/getUserByIdAction`;
 ```
 
-### Slice File{.col-span-2}
+### Slice File
 
 ```
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
@@ -72,7 +72,7 @@ export const {
 export default usersSlice.reducer;
 ```
 
-### Saga File{.col-span-2}
+### Saga File
 
 ```
 import {PayloadAction} from "@reduxjs/toolkit";
