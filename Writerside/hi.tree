@@ -33,4 +33,5 @@
     <toc-element topic="SASS.md"/>
     <toc-element topic="Grep.md"/>
     <toc-element topic="Git.md"/>
+    <toc-element topic="DBT-Transformation.md"/>
 </instance-profile>
