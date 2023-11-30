@@ -6,7 +6,6 @@
                  name="Help Instance"
                  start-page="Overview.md">
 
-    <toc-element topic="SASS.md"/>
     <toc-element topic="Overview.md"/>
     <toc-element topic="Tailwindcss.md">
         <toc-element topic="Tailwindcss-Spacing.md"/>
@@ -31,4 +30,6 @@
     <toc-element topic="Homebrew.md"/>
     <toc-element topic="Sed.md"/>
     <toc-element topic="Docker.md"/>
+    <toc-element topic="SASS.md"/>
+    <toc-element topic="Grep.md"/>
 </instance-profile>
