@@ -41,11 +41,11 @@ $ ssh root@192.168.1.5 bash < script.sh
 
 Compresses and downloads from a server
 
-```shell script {.wrap}
+```shell script 
 $ ssh root@192.168.1.5 "tar cvzf - ~/source" > output.tgz
 ```
 
-### SCP {.row-span-2}
+### SCP 
 
 Copies from remote to local
 
@@ -129,31 +129,31 @@ See: Full [Config Options](https://linux.die.net/man/5/ssh_config)
 $ ssh -J proxy_host1 remote_host2
 ```
 
-```shell script {.wrap}
+```shell script 
 $ ssh -J user@proxy_host1 user@remote_host2
 ```
 
 Multiple jumps
 
-```shell script {.wrap}
+```shell script 
 $ ssh -J user@proxy_host1:port1,user@proxy_host2:port2 user@remote_host3
 ```
 
 ### ssh-copy-id
 
-```shell script {.wrap}
+```shell script 
 $ ssh-copy-id user@server
 ```
 
 Copy to alias server
 
-```shell script {.wrap}
+```shell script 
 $ ssh-copy-id server1
 ```
 
 Copy specific key
 
-```shell script {.wrap}
+```shell script 
 $ ssh-copy-id -i ~/.ssh/id_rsa.pub user@server
 ```
 
@@ -174,11 +174,11 @@ $ ssh-keygen -t rsa -b 4096 -C "your@mail.com"
 |   | `-b` | The number of bits in the key |
 |   | `-C` | Provides a new comment        |
 
-{.left-text}
+
 
 Generate an RSA 4096 bit key with email as a comment
 
-### Generate {.col-span-2 .row-span-2}
+### Generate 
 
 Generate a key interactively
 
@@ -217,7 +217,7 @@ $ ssh-keygen -p -f ~/.ssh/id_rsa
 - dsa
 - ecdsa
 
-### known_hosts {.col-span-2}
+### known_hosts 
 
 Search from known_hosts
 
