@@ -47,4 +47,5 @@
     <toc-element topic="VIM.md"/>
     <toc-element topic="ChatGPT.md"/>
     <toc-element topic="Mysql.md"/>
+    <toc-element topic="Rsync.md"/>
 </instance-profile>
