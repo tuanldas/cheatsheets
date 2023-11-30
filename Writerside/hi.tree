@@ -38,4 +38,5 @@
     <toc-element topic="DBT-Transformation.md"/>
     <toc-element topic="Laravel-Passport.md"/>
     <toc-element topic="React-Redux.md"/>
+    <toc-element topic="Chmod.md"/>
 </instance-profile>
