@@ -44,4 +44,5 @@
     <toc-element topic="RegEX.md"/>
     <toc-element topic="HTTP-Status-Code.md"/>
     <toc-element topic="PostgreSQL.md"/>
+    <toc-element topic="VIM.md"/>
 </instance-profile>
