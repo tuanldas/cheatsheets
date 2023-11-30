@@ -46,4 +46,5 @@
     <toc-element topic="PostgreSQL.md"/>
     <toc-element topic="VIM.md"/>
     <toc-element topic="ChatGPT.md"/>
+    <toc-element topic="Mysql.md"/>
 </instance-profile>
