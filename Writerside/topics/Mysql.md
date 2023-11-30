@@ -522,8 +522,8 @@ MySQL Data Types
 | `BLOB`       | String (0 - 65535)          |
 | `MEDIUMTEXT` | String (0 - 16777215)       |
 | `MEDIUMBLOB` | String (0 - 16777215)       |
-| `LONGTEXT`   | String (0 - 429496­7295)    |
-| `LONGBLOB`   | String (0 - 429496­7295)    |
+| `LONGTEXT`   | String (0 - 4294967295)     |
+| `LONGBLOB`   | String (0 - 4294967295)     |
 | `ENUM`       | One of preset options       |
 | `SET`        | Selection of preset options |
 
