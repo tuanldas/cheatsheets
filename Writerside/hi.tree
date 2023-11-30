@@ -6,7 +6,9 @@
                  name="Help Instance"
                  start-page="Overview.md">
 
-    <toc-element topic="Overview.md"/>
+    <toc-element topic="Overview.md">
+        <toc-element topic="HTML-Characters-Entities.md"/>
+    </toc-element>
     <toc-element topic="Tailwindcss.md">
         <toc-element topic="Tailwindcss-Spacing.md"/>
         <toc-element topic="Tailwindcss-Font.md"/>
