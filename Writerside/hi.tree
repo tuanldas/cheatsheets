@@ -32,4 +32,5 @@
     <toc-element topic="Docker.md"/>
     <toc-element topic="SASS.md"/>
     <toc-element topic="Grep.md"/>
+    <toc-element topic="Git.md"/>
 </instance-profile>
