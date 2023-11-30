@@ -16,7 +16,7 @@ HTTP Status code
 - [5xx: Server Error](#5xx-server-error){data-tooltip="It means the server failed to fulfill an apparently valid
   request."}
 
-### 2xx. Successful {.row-span-2}
+### 2xx. Successful
 
 * [200: OK](https://tools.ietf.org/html/rfc7231#section-6.3.1){data-tooltip="The request is OK."}
 * [201: Created](https://tools.ietf.org/html/rfc7231#section-6.3.2){data-tooltip="The request is complete, and a new
@@ -33,7 +33,7 @@ HTTP Status code
   data of the size requested. Used in response to a request specifying a Range header. The server must specify the range
   included in the response with the Content-Range header."}
 
-### 4xx. Client Error {.row-span-3}
+### 4xx. Client Error
 
 * [400: Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1){data-tooltip="The server did not understand the
   request."}
