@@ -35,4 +35,5 @@
     <toc-element topic="Git.md"/>
     <toc-element topic="DBT-Transformation.md"/>
     <toc-element topic="Laravel-Passport.md"/>
+    <toc-element topic="React-Redux.md"/>
 </instance-profile>
