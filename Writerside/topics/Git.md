@@ -367,3 +367,14 @@ Viết lại nội dung commit cuối cùng
 ```shell script
 $ git commit --amend -m "new message"
 ```
+
+Git Flow
+--------
+
+# Cài đặt
+
+Cài đặt git flow bằng home brew
+
+```
+brew install git-flow-avh
+```
