@@ -370,7 +370,7 @@ $ git commit --amend -m "new message"
 
 Git Flow
 --------
-
+Tham khảo: [https://danielkummer.github.io/git-flow-cheatsheet](https://danielkummer.github.io/git-flow-cheatsheet/)
 # Cài đặt
 
 Cài đặt git flow bằng home brew
