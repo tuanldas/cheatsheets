@@ -378,3 +378,5 @@ Cài đặt git flow bằng home brew
 ```
 brew install git-flow-avh
 ```
+
+{prompt="$"}
