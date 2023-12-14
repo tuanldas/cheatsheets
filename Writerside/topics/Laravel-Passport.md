@@ -22,7 +22,7 @@ php artisan passport:keys
 ```
 
 Sau đó thêm env
-
+Sử dụng access client
 ```
 PASSPORT_PERSONAL_ACCESS_CLIENT_ID=...
 PASSPORT_PERSONAL_ACCESS_CLIENT_SECRET=...
