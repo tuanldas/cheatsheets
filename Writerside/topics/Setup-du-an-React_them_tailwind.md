@@ -4,7 +4,7 @@
 ## Cài đặt tailwind
 
 ```Bash
-npm install tailwindcss postcss autoprefixer
+npm install tailwindcss postcss autoprefixer sass
 npx tailwindcss init
 ```
 
