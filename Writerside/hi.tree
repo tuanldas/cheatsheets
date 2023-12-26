@@ -11,7 +11,12 @@
         <toc-element topic="Tailwindcss-Spacing.md"/>
         <toc-element topic="Tailwindcss-Font.md"/>
     </toc-element>
-    <toc-element topic="Setup-react-vite-redux-tailwind.md"/>
+    <toc-element topic="Setup-du-an-React.md">
+        <toc-element topic="Setup-du-an-React_tao_du_an.md">
+        </toc-element>
+        <toc-element topic="Setup-du-an-React_them_tailwind.md"/>
+        <toc-element topic="Setup-du-an-React_them_redux.md"/>
+    </toc-element>
     <toc-element topic="Sublime-Text.md"/>
     <toc-element topic="Bash.md">
         <toc-element topic="Bash-Getting-Started.md">
