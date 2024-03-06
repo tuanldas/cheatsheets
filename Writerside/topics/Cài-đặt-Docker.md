@@ -36,4 +36,10 @@ sudo apt install docker-ce -y
 sudo usermod -aG docker {username}
 ```
 
+## Khời động lại máy
+
+```
+sudo reboot
+```
+
 > username: tên user cần cấp quyền
