@@ -1,0 +1,34 @@
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html lang="en-US" data-colors-preset="contrast" data-primary-color="#307FFF"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="robots" content="noindex"><meta name="built-on" content="2024-03-06T16:31:39.048142"><title>C&agrave;i đặt Docker | Help Instance</title><script type="application/json" id="virtual-toc-data">[{"id":"c-p-nh-t-danh-s-ch-c-c-g-i-hi-n-c","level":0,"title":"Cập nhật danh sách các gói hiện có","anchor":"#c-p-nh-t-danh-s-ch-c-c-g-i-hi-n-c"},{"id":"c-i-t-c-c-g-i-b-t-bu-c","level":0,"title":"Cài đặt các gói bắt buộc","anchor":"#c-i-t-c-c-g-i-b-t-bu-c"},{"id":"th-m-kh-a-gpg-v-o-h-th-ng","level":0,"title":"Thêm khóa GPG vào hệ thống","anchor":"#th-m-kh-a-gpg-v-o-h-th-ng"},{"id":"c-i-t-docker","level":0,"title":"Cài đặt docker","anchor":"#c-i-t-docker"},{"id":"c-p-quy-n-ch-y-l-nh-docker-kh-ng-c-n-sudo-cho-c-c-user","level":0,"title":"Cấp quyền chạy lệnh docker không cần sudo cho các user","anchor":"#c-p-quy-n-ch-y-l-nh-docker-kh-ng-c-n-sudo-cho-c-c-user"},{"id":"kh-i-ng-l-i-m-y","level":0,"title":"Khời động lại máy","anchor":"#kh-i-ng-l-i-m-y"}]</script><script type="application/json" id="topic-shortcuts"></script><link href="https://resources.jetbrains.com/writerside/apidoc/6.6.6-b205/app.css" rel="stylesheet"><link rel="apple-touch-icon" sizes="180x180" href="https://jetbrains.com/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://jetbrains.com/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://jetbrains.com/favicon-16x16.png"><link rel="manifest" href="site.webmanifest"><meta name="msapplication-TileColor" content="#000000"><meta name="msapplication-TileImage" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-144x144.png"><meta name="msapplication-square70x70logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-70x70.png"><meta name="msapplication-square150x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-150x150.png"><meta name="msapplication-wide310x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x150.png"><meta name="msapplication-square310x310logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x310.png"><meta name="image" content=""><!-- Open Graph --><meta property="og:title" content="C&agrave;i đặt Docker | Help Instance"><meta property="og:description" content=""><meta property="og:image" content=""><meta property="og:site_name" content="Help Instance Help"><meta property="og:type" content="website"><meta property="og:locale" content="en_US"><meta property="og:url" content="cài-đặt-docker.html"><!-- End Open Graph --><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content=""><meta name="twitter:title" content="C&agrave;i đặt Docker | Help Instance"><meta name="twitter:description" content=""><meta name="twitter:creator" content=""><meta name="twitter:image:src" content=""><!-- End Twitter Card --><!-- Schema.org WebPage --><script type="application/ld+json">{
+    "@context": "http://schema.org",
+    "@type": "WebPage",
+    "@id": "cài-đặt-docker.html#webpage",
+    "url": "cài-đặt-docker.html",
+    "name": "C&agrave;i đặt Docker | Help Instance",
+    "description": "",
+    "image": "",
+    "inLanguage":"en-US"
+}</script><!-- End Schema.org --><!-- Schema.org WebSite --><script type="application/ld+json">{
+    "@type": "WebSite",
+    "@id": "/#website",
+    "url": "/",
+    "name": "Help Instance Help"
+}</script><!-- End Schema.org --></head><body data-id="Cài-đặt-Docker" data-main-title="C&agrave;i đặt Docker" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="thiet-lap-server-ubuntu.md|Thiết lập server ubuntu"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Help Instance  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="Cài-đặt-Docker" id="Cài-đặt-Docker.md">C&agrave;i đặt Docker</h1><section class="chapter"><h2 id="c-p-nh-t-danh-s-ch-c-c-g-i-hi-n-c" data-toc="c-p-nh-t-danh-s-ch-c-c-g-i-hi-n-c">Cập nhật danh s&aacute;ch c&aacute;c g&oacute;i hiện c&oacute;</h2><div class="code-block" data-lang="none">
+sudo apt update -y &amp;&amp; sudo apt upgrade -y
+</div></section><section class="chapter"><h2 id="c-i-t-c-c-g-i-b-t-bu-c" data-toc="c-i-t-c-c-g-i-b-t-bu-c">C&agrave;i đặt c&aacute;c g&oacute;i bắt buộc</h2><div class="code-block" data-lang="none">
+sudo apt install -y	  apt-transport-https ca-certificates curl software-properties-common
+</div></section><section class="chapter"><h2 id="th-m-kh-a-gpg-v-o-h-th-ng" data-toc="th-m-kh-a-gpg-v-o-h-th-ng">Th&ecirc;m kh&oacute;a GPG v&agrave;o hệ thống</h2><div class="code-block" data-lang="none">
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+
+echo &quot;deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable&quot; | sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null
+</div></section><section class="chapter"><h2 id="c-i-t-docker" data-toc="c-i-t-docker">C&agrave;i đặt docker</h2><div class="code-block" data-lang="none">
+sudo apt update
+
+sudo apt-cache policy docker-ce
+
+sudo apt install docker-ce -y
+</div></section><section class="chapter"><h2 id="c-p-quy-n-ch-y-l-nh-docker-kh-ng-c-n-sudo-cho-c-c-user" data-toc="c-p-quy-n-ch-y-l-nh-docker-kh-ng-c-n-sudo-cho-c-c-user">Cấp quyền chạy lệnh docker kh&ocirc;ng cần sudo cho c&aacute;c user</h2><div class="code-block" data-lang="none">
+sudo usermod -aG docker {username}
+</div></section><section class="chapter"><h2 id="kh-i-ng-l-i-m-y" data-toc="kh-i-ng-l-i-m-y">Khời động lại m&aacute;y</h2><div class="code-block" data-lang="none">
+sudo reboot
+</div><aside class="prompt" data-type="tip" data-title="" id="f801cf9f_226"><p id="f801cf9f_227">username: t&ecirc;n user cần cấp quyền</p></aside></section><div class="last-modified">Last modified: 06 March 2024</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="cài-đặt-oh-my-zsh.html" class="navigation-links__prev">C&agrave;i đặt Oh My ZSH</a><a href="cài-đặt-openvpn.html" class="navigation-links__next">C&agrave;i đặt Openvpn</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.6.6-b205/app.js"></script></body></html>

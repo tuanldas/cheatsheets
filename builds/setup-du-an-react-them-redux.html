@@ -1,0 +1,168 @@
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html lang="en-US" data-colors-preset="contrast" data-primary-color="#307FFF"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="robots" content="noindex"><meta name="built-on" content="2024-03-06T16:31:39.070845"><title>Th&ecirc;m Redux | Help Instance</title><script type="application/json" id="virtual-toc-data">[{"id":"th-m-redux-v-o-d-n","level":0,"title":"Thêm redux vào dự án","anchor":"#th-m-redux-v-o-d-n"},{"id":"tham-kh-o","level":0,"title":"Tham khảo","anchor":"#tham-kh-o"}]</script><script type="application/json" id="topic-shortcuts"></script><link href="https://resources.jetbrains.com/writerside/apidoc/6.6.6-b205/app.css" rel="stylesheet"><link rel="apple-touch-icon" sizes="180x180" href="https://jetbrains.com/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://jetbrains.com/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://jetbrains.com/favicon-16x16.png"><link rel="manifest" href="site.webmanifest"><meta name="msapplication-TileColor" content="#000000"><meta name="msapplication-TileImage" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-144x144.png"><meta name="msapplication-square70x70logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-70x70.png"><meta name="msapplication-square150x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-150x150.png"><meta name="msapplication-wide310x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x150.png"><meta name="msapplication-square310x310logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x310.png"><meta name="image" content=""><!-- Open Graph --><meta property="og:title" content="Th&ecirc;m Redux | Help Instance"><meta property="og:description" content=""><meta property="og:image" content=""><meta property="og:site_name" content="Help Instance Help"><meta property="og:type" content="website"><meta property="og:locale" content="en_US"><meta property="og:url" content="setup-du-an-react-them-redux.html"><!-- End Open Graph --><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content=""><meta name="twitter:title" content="Th&ecirc;m Redux | Help Instance"><meta name="twitter:description" content=""><meta name="twitter:creator" content=""><meta name="twitter:image:src" content=""><!-- End Twitter Card --><!-- Schema.org WebPage --><script type="application/ld+json">{
+    "@context": "http://schema.org",
+    "@type": "WebPage",
+    "@id": "setup-du-an-react-them-redux.html#webpage",
+    "url": "setup-du-an-react-them-redux.html",
+    "name": "Th&ecirc;m Redux | Help Instance",
+    "description": "",
+    "image": "",
+    "inLanguage":"en-US"
+}</script><!-- End Schema.org --><!-- Schema.org WebSite --><script type="application/ld+json">{
+    "@type": "WebSite",
+    "@id": "/#website",
+    "url": "/",
+    "name": "Help Instance Help"
+}</script><!-- End Schema.org --></head><body data-id="Setup-du-an-React_them_redux" data-main-title="Th&ecirc;m Redux" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="Setup-du-an-React.md|Setup dự án React"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Help Instance  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="Setup-du-an-React_them_redux" id="Setup-du-an-React_them_redux.md">Th&ecirc;m Redux</h1><section class="chapter"><h2 id="th-m-redux-v-o-d-n" data-toc="th-m-redux-v-o-d-n">Th&ecirc;m redux v&agrave;o dự &aacute;n</h2><p id="4122b55e_2">Tại đ&acirc;y ta sử dụng redux kết hợp với redux-toolkit</p><p id="4122b55e_3">C&agrave;i đặt</p><div class="code-block" data-lang="bash" data-prompt="$">
+npm install @reduxjs/toolkit react-redux
+</div><p id="4122b55e_5">Cấu h&igrave;nh redux store</p><p id="4122b55e_6">Tạo file <code class="code" id="4122b55e_7">src/store/index.tsx</code></p><div class="code-block" data-lang="ts">
+import { configureStore } from '@reduxjs/toolkit'
+
+export const store = configureStore({
+  reducer: {},
+})
+
+// Infer the `RootState` and `AppDispatch` types from the store itself
+export type RootState = ReturnType&lt;typeof store.getState&gt;
+// Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
+export type AppDispatch = typeof store.dispatch
+</div><p id="4122b55e_9">Cấu h&igrave;nh Provide redux cho react. <br> Th&ecirc;m cấu h&igrave;nh v&agrave;o file <code class="code" id="4122b55e_11">index.tsx hoặc main.tsx</code></p><div class="code-block" data-lang="ts">
+import React from 'react'
+import ReactDOM from 'react-dom'
+import './index.css'
+import App from './App'
+import { store } from './app/store'
+import { Provider } from 'react-redux'
+
+ReactDOM.render(
+  &lt;Provider store={store}&gt;
+    &lt;App /&gt;
+  &lt;/Provider&gt;,
+  document.getElementById('root')
+)
+</div><p id="4122b55e_13">Tạo Redux Slice</p><div class="code-block" data-lang="ts">
+import { createSlice } from '@reduxjs/toolkit'
+import type { PayloadAction } from '@reduxjs/toolkit'
+
+export interface CounterState {
+  value: number
+}
+
+const initialState: CounterState = {
+  value: 0,
+}
+
+export const counterSlice = createSlice({
+  name: 'counter',
+  initialState,
+  reducers: {
+    increment: (state) =&gt; {
+      // Redux Toolkit allows us to write &quot;mutating&quot; logic in reducers. It
+      // doesn't actually mutate the state because it uses the Immer library,
+      // which detects changes to a &quot;draft state&quot; and produces a brand new
+      // immutable state based off those changes
+      state.value += 1
+    },
+    decrement: (state) =&gt; {
+      state.value -= 1
+    },
+    incrementByAmount: (state, action: PayloadAction&lt;number&gt;) =&gt; {
+      state.value += action.payload
+    },
+  },
+})
+
+// Action creators are generated for each case reducer function
+export const { increment, decrement, incrementByAmount } = counterSlice.actions
+
+export default counterSlice.reducer
+</div><p id="4122b55e_15">Th&ecirc;m slice v&agrave;o store</p><div class="code-block" data-lang="ts">
+import { configureStore } from '@reduxjs/toolkit'
+import counterReducer from '../features/counter/counterSlice'
+
+export const store = configureStore({
+  reducer: {
+    counter: counterReducer,
+  },
+})
+</div><p id="4122b55e_17">Định nghĩa Action Types</p><div class="code-block" data-lang="ts">
+import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { RootState, AppThunk } from '../../app/store';
+import { fetchCount } from './counterAPI';
+
+export interface CounterState {
+  value: number;
+  status: 'idle' | 'loading' | 'failed';
+}
+
+const initialState: CounterState = {
+  value: 0,
+  status: 'idle',
+};
+
+export const incrementAsync = createAsyncThunk(
+  'counter/fetchCount',
+  async (amount: number) =&gt; {
+    const response = await fetchCount(amount);
+    // The value we return becomes the `fulfilled` action payload
+    return response.data;
+  }
+);
+
+export const counterSlice = createSlice({
+  name: 'counter',
+  initialState,
+  // The `reducers` field lets us define reducers and generate associated actions
+  reducers: {
+    increment: (state) =&gt; {
+      // Redux Toolkit allows us to write &quot;mutating&quot; logic in reducers. It
+      // doesn't actually mutate the state because it uses the Immer library,
+      // which detects changes to a &quot;draft state&quot; and produces a brand new
+      // immutable state based off those changes
+      state.value += 1;
+    },
+    decrement: (state) =&gt; {
+      state.value -= 1;
+    },
+    // Use the PayloadAction type to declare the contents of `action.payload`
+    incrementByAmount: (state, action: PayloadAction&lt;number&gt;) =&gt; {
+      state.value += action.payload;
+    },
+  },
+  // The `extraReducers` field lets the slice handle actions defined elsewhere,
+  // including actions generated by createAsyncThunk or in other slices.
+  extraReducers: (builder) =&gt; {
+    builder
+      .addCase(incrementAsync.pending, (state) =&gt; {
+        state.status = 'loading';
+      })
+      .addCase(incrementAsync.fulfilled, (state, action) =&gt; {
+        state.status = 'idle';
+        state.value += action.payload;
+      })
+      .addCase(incrementAsync.rejected, (state) =&gt; {
+        state.status = 'failed';
+      });
+  },
+});
+
+export const { increment, decrement, incrementByAmount } = counterSlice.actions;
+
+// The function below is called a selector and allows us to select a value from
+// the state. Selectors can also be defined inline where they're used instead of
+// in the slice file. For example: `useSelector((state: RootState) =&gt; state.counter.value)`
+export const selectCount = (state: RootState) =&gt; state.counter.value;
+
+// We can also write thunks by hand, which may contain both sync and async logic.
+// Here's an example of conditionally dispatching actions based on current state.
+export const incrementIfOdd =
+  (amount: number): AppThunk =&gt;
+  (dispatch, getState) =&gt; {
+    const currentValue = selectCount(getState());
+    if (currentValue % 2 === 1) {
+      dispatch(incrementByAmount(amount));
+    }
+  };
+
+export default counterSlice.reducer;
+</div></section><section class="chapter"><h2 id="tham-kh-o" data-toc="tham-kh-o">Tham khảo</h2><ul class="list _ul" id="4122b55e_19"><li class="list__item" id="4122b55e_20"><p><a href="https://redux.js.org/tutorials/typescript-quick-start" id="4122b55e_21" data-external="true" rel="noopener noreferrer">https://redux.js.org/tutorials/typescript-quick-start</a></p></li></ul></section><div class="last-modified">Last modified: 06 March 2024</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="setup-du-an-react-them-daisyui.html" class="navigation-links__prev">Th&ecirc;m daisyui</a><a href="setup-du-an-react-them-react-router-dom.html" class="navigation-links__next">Th&ecirc;m react router dom</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.6.6-b205/app.js"></script></body></html>

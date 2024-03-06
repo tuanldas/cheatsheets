@@ -1,0 +1,240 @@
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html lang="en-US" data-colors-preset="contrast" data-primary-color="#307FFF"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="robots" content="noindex"><meta name="built-on" content="2024-03-06T16:31:39.084175"><title>SASS | Help Instance</title><script type="application/json" id="virtual-toc-data">[{"id":"sass-basics","level":0,"title":"Sass Basics","anchor":"#sass-basics"},{"id":"sass-mixins","level":0,"title":"Sass Mixins","anchor":"#sass-mixins"},{"id":"sass-color-functions","level":0,"title":"Sass Color functions","anchor":"#sass-color-functions"},{"id":"sass-other-functions","level":0,"title":"Sass Other functions","anchor":"#sass-other-functions"},{"id":"sass-feature-checks","level":0,"title":"Sass Feature checks","anchor":"#sass-feature-checks"},{"id":"sass-loops","level":0,"title":"Sass Loops","anchor":"#sass-loops"},{"id":"sass-other-features","level":0,"title":"Sass Other features","anchor":"#sass-other-features"}]</script><script type="application/json" id="topic-shortcuts"></script><link href="https://resources.jetbrains.com/writerside/apidoc/6.6.6-b205/app.css" rel="stylesheet"><link rel="apple-touch-icon" sizes="180x180" href="https://jetbrains.com/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://jetbrains.com/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://jetbrains.com/favicon-16x16.png"><link rel="manifest" href="site.webmanifest"><meta name="msapplication-TileColor" content="#000000"><meta name="msapplication-TileImage" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-144x144.png"><meta name="msapplication-square70x70logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-70x70.png"><meta name="msapplication-square150x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-150x150.png"><meta name="msapplication-wide310x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x150.png"><meta name="msapplication-square310x310logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x310.png"><meta name="image" content=""><!-- Open Graph --><meta property="og:title" content="SASS | Help Instance"><meta property="og:description" content=""><meta property="og:image" content=""><meta property="og:site_name" content="Help Instance Help"><meta property="og:type" content="website"><meta property="og:locale" content="en_US"><meta property="og:url" content="sass.html"><!-- End Open Graph --><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content=""><meta name="twitter:title" content="SASS | Help Instance"><meta name="twitter:description" content=""><meta name="twitter:creator" content=""><meta name="twitter:image:src" content=""><!-- End Twitter Card --><!-- Schema.org WebPage --><script type="application/ld+json">{
+    "@context": "http://schema.org",
+    "@type": "WebPage",
+    "@id": "sass.html#webpage",
+    "url": "sass.html",
+    "name": "SASS | Help Instance",
+    "description": "",
+    "image": "",
+    "inLanguage":"en-US"
+}</script><!-- End Schema.org --><!-- Schema.org WebSite --><script type="application/ld+json">{
+    "@type": "WebSite",
+    "@id": "/#website",
+    "url": "/",
+    "name": "Help Instance Help"
+}</script><!-- End Schema.org --></head><body data-id="SASS" data-main-title="SASS" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs=""><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Help Instance  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="SASS" id="SASS.md">SASS</h1><section class="chapter"><h2 id="sass-basics" data-toc="sass-basics">Sass Basics</h2><section class="chapter"><h3 id="introduction" data-toc="introduction">Introduction</h3><ul class="list _ul" id="44d89f1d_148"><li class="list__item" id="44d89f1d_149"><p><a href="https://sass-lang.com/documentation" id="44d89f1d_150" data-external="true" rel="noopener noreferrer">Documentation</a> <span class="emphasis" id="44d89f1d_151">(sass-lang.com)</span></p></li><li class="list__item" id="44d89f1d_152"><p><a href="https://learnxinyminutes.com/docs/sass/" id="44d89f1d_153" data-external="true" rel="noopener noreferrer">Learn X in Y minutes</a> <span class="emphasis" id="44d89f1d_154">(learnxinyminutes.com)</span></p></li></ul></section><section class="chapter"><h3 id="variables" data-toc="variables">Variables</h3><div class="code-block" data-lang="none">
+$defaultLinkColor: #46EAC2;
+
+a {
+  color: $defaultLinkColor;
+}
+</div></section><section class="chapter"><h3 id="string-interpolation" data-toc="string-interpolation">String interpolation</h3><div class="code-block" data-lang="none">
+$wk: -webkit-;
+
+.rounded-box {
+  #{$wk}border-radius: 4px;
+}
+</div></section><section class="chapter"><h3 id="comments" data-toc="comments">Comments</h3><div class="code-block" data-lang="none">
+/*
+ Block comments
+ Block comments
+ Block comments
+*/
+
+// Line comments
+</div></section><section class="chapter"><h3 id="mixins" data-toc="mixins">Mixins</h3><div class="code-block" data-lang="none">
+@mixin heading-font {
+    font-family: sans-serif;
+    font-weight: bold;
+}
+h1 {
+    @include heading-font;
+}
+</div><p id="44d89f1d_159">See: <span id="44d89f1d_160">Mixins</span></p></section><section class="chapter"><h3 id="nesting" data-toc="nesting">Nesting</h3><div class="code-block" data-lang="none">
+.markdown-body {
+    a {
+      color: blue;
+      &amp;:hover {
+        color: red;
+      }
+    }
+}
+</div><section class="chapter"><h4 id="to-properties" data-toc="to-properties">to properties</h4><div class="code-block" data-lang="none">
+text: {
+    // like text-align: center
+    align: center;          
+    // like text-transform: uppercase
+    transform: uppercase; 
+}
+</div></section></section><section class="chapter"><h3 id="extend" data-toc="extend">Extend</h3><div class="code-block" data-lang="none">
+.button {
+    ···
+}
+</div><div class="code-block" data-lang="none">
+.push-button {
+    @extend .button;
+}
+</div></section><section class="chapter"><h3 id="import" data-toc="import">@import</h3><div class="code-block" data-lang="none">
+@import './other_sass_file';
+@import '/code', 'lists';
+
+// Plain CSS @imports
+@import &quot;theme.css&quot;;
+@import url(theme);
+</div><p id="44d89f1d_166">The <code class="code" id="44d89f1d_167">.sass</code> or <code class="code" id="44d89f1d_168">.sass</code> extension is optional.</p></section></section><section class="chapter"><h2 id="sass-mixins" data-toc="sass-mixins">Sass Mixins</h2><section class="chapter"><h3 id="parameters" data-toc="parameters">Parameters</h3><div class="code-block" data-lang="none">
+@mixin font-size($n) {
+    font-size: $n * 1.2em;
+}
+</div><div class="code-block" data-lang="none">
+body {
+    @include font-size(2);
+}
+</div></section><section class="chapter"><h3 id="default-values" data-toc="default-values">Default values</h3><div class="code-block" data-lang="none">
+@mixin pad($n: 10px) {
+    padding: $n;
+}
+</div><div class="code-block" data-lang="none">
+body {
+    @include pad(15px);
+}
+</div></section><section class="chapter"><h3 id="default-variable" data-toc="default-variable">Default variable</h3><div class="code-block" data-lang="none">
+$default-padding: 10px;
+
+@mixin pad($n: $default-padding) {
+    padding: $n;
+}
+
+body {
+    @include pad(15px);
+}
+</div></section></section><section class="chapter"><h2 id="sass-color-functions" data-toc="sass-color-functions">Sass Color functions</h2><section class="chapter"><h3 id="rgba" data-toc="rgba">rgba</h3><div class="code-block" data-lang="none">
+rgb(100, 120, 140)
+rgba(100, 120, 140, .5)
+rgba($color, .5)
+</div></section><section class="chapter"><h3 id="mixing" data-toc="mixing">Mixing</h3><div class="code-block" data-lang="none">
+mix($a, $b, 10%)   // 10% a, 90% b
+</div></section><section class="chapter"><h3 id="modifying-hsla" data-toc="modifying-hsla">Modifying HSLA</h3><div class="code-block" data-lang="none">
+darken($color, 5%)
+lighten($color, 5%)
+</div><div class="code-block" data-lang="none">
+saturate($color, 5%)
+desaturate($color, 5%)
+grayscale($color)
+</div><div class="code-block" data-lang="none">
+adjust-hue($color, 15deg)
+complement($color)    // like adjust-hue(_, 180deg)
+invert($color)
+</div><div class="code-block" data-lang="none">
+fade-in($color, .5)   // aka opacify()
+fade-out($color, .5)  // aka transparentize()
+rgba($color, .5)      // sets alpha to .5
+</div></section><section class="chapter"><h3 id="getting-individual-values" data-toc="getting-individual-values">Getting individual values</h3><section class="chapter"><h4 id="hsla" data-toc="hsla">HSLA</h4><div class="code-block" data-lang="none">
+hue($color)         // 0deg..360deg
+saturation($color)  // 0%..100%
+lightness($color)   // 0%..100%
+alpha($color)       // 0..1 (aka opacity())
+</div></section><section class="chapter"><h4 id="rgb" data-toc="rgb">RGB</h4><div class="code-block" data-lang="none">
+red($color)         // 0..255
+green($color)
+blue($color)
+</div><p id="44d89f1d_182">See: <a href="http://sass-lang.com/documentation/Sass/Script/Functions.html#hue-instance_method" id="44d89f1d_183" data-external="true" rel="noopener noreferrer">hue()</a>, <a href="http://sass-lang.com/documentation/Sass/Script/Functions.html#red-instance_method" id="44d89f1d_184" data-external="true" rel="noopener noreferrer">red()</a></p></section></section><section class="chapter"><h3 id="adjustments" data-toc="adjustments">Adjustments</h3><div class="code-block" data-lang="none">
+// Changes by fixed amounts
+adjust-color($color, $blue: 5)
+adjust-color($color, $lightness: -30%) // darken(_, 30%)
+adjust-color($color, $alpha: -0.4)     // fade-out(_, .4)
+adjust-color($color, $hue: 30deg)      // adjust-hue(_, 15deg)
+</div><div class="code-block" data-lang="none">
+// Changes via percentage
+scale-color($color, $lightness: 50%)
+</div><div class="code-block" data-lang="none">
+// Changes one property completely
+change-color($color, $hue: 180deg)
+change-color($color, $blue: 250)
+</div><p id="44d89f1d_188">Supported: <code class="code" id="44d89f1d_189">$red</code>, <code class="code" id="44d89f1d_190">$green</code>, <code class="code" id="44d89f1d_191">$blue</code>, <code class="code" id="44d89f1d_192">$hue</code>, <code class="code" id="44d89f1d_193">$saturation</code>, <code class="code" id="44d89f1d_194">$lightness</code>, <code class="code" id="44d89f1d_195">$alpha</code></p></section></section><section class="chapter"><h2 id="sass-other-functions" data-toc="sass-other-functions">Sass Other functions</h2><section class="chapter"><h3 id="strings" data-toc="strings">Strings</h3><div class="code-block" data-lang="none">
+unquote('hello')
+quote(hello)
+</div><div class="code-block" data-lang="none">
+to-upper-case(hello)
+to-lower-case(hello)
+</div><div class="code-block" data-lang="none">
+str-length(hello world)
+str-slice(hello, 2, 5)     // &quot;ello&quot; - it's 1-based, not 0-based
+str-insert(&quot;abcd&quot;, &quot;X&quot;, 1) // &quot;Xabcd&quot;
+</div></section><section class="chapter"><h3 id="units" data-toc="units">Units</h3><div class="code-block" data-lang="none">
+unit(3em)        // 'em'
+unitless(100px)  // false
+</div></section><section class="chapter"><h3 id="numbers" data-toc="numbers">Numbers</h3><div class="code-block" data-lang="none">
+floor(3.5)
+ceil(3.5)
+round(3.5)
+abs(3.5)
+</div><div class="code-block" data-lang="none">
+min(1, 2, 3)
+max(1, 2, 3)
+</div><div class="code-block" data-lang="none">
+percentage(.5)   // 50%
+random(3)        // 0..3
+</div></section><section class="chapter"><h3 id="misc" data-toc="misc">Misc</h3><div class="code-block" data-lang="none">
+variable-exists(red)    // checks for $red
+mixin-exists(red-text)  // checks for @mixin red-text
+function-exists(redify)
+</div><div class="code-block" data-lang="none">
+global-variable-exists(red)
+</div><div class="code-block" data-lang="none">
+selector-append('.menu', 'li', 'a')   // .menu li a
+selector-nest('.menu', '&amp;:hover li')  // .menu:hover li
+selector-extend(...)
+selector-parse(...)
+selector-replace(...)
+selector-unify(...)
+</div></section></section><section class="chapter"><h2 id="sass-feature-checks" data-toc="sass-feature-checks">Sass Feature checks</h2><section class="chapter"><h3 id="feature-check" data-toc="feature-check">Feature check</h3><div class="code-block" data-lang="none">
+feature-exists(global-variable-shadowing)
+</div></section><section class="chapter"><h3 id="features" data-toc="features">Features</h3><ul class="list _ul" id="44d89f1d_207"><li class="list__item" id="44d89f1d_208"><p>global-variable-shadowing</p></li><li class="list__item" id="44d89f1d_209"><p>extend-selector-pseudoclass</p></li><li class="list__item" id="44d89f1d_210"><p>units-level-3</p></li><li class="list__item" id="44d89f1d_211"><p>at-error</p></li></ul></section></section><section class="chapter"><h2 id="sass-loops" data-toc="sass-loops">Sass Loops</h2><section class="chapter"><h3 id="for-loops" data-toc="for-loops">For loops</h3><div class="code-block" data-lang="none">
+@for $i from 1 through 4 {
+    .item-#{$i} { left: 20px * $i; }
+}
+</div></section><section class="chapter"><h3 id="each-loops-simple" data-toc="each-loops-simple">Each loops (simple)</h3><div class="code-block" data-lang="none">
+$menu-items: home about contact;
+
+@each $item in $menu-items {
+    .photo-#{$item} {
+      background: url('#{$item}.jpg');
+    }
+}
+</div></section><section class="chapter"><h3 id="each-loops-nested" data-toc="each-loops-nested">Each loops (nested)</h3><div class="code-block" data-lang="none">
+$backgrounds: (home, 'home.jpg'),
+              (about, 'about.jpg');
+
+@each $id, $image in $backgrounds {
+    .photo-#{$id} {
+      background: url($image);
+    }
+}
+</div></section><section class="chapter"><h3 id="while-loops" data-toc="while-loops">While loops</h3><div class="code-block" data-lang="none">
+$i: 6;
+@while $i &gt; 0 {
+    .item-#{$i} { width: 2em * $i; }
+    $i: $i - 2;
+}
+</div></section></section><section class="chapter"><h2 id="sass-other-features" data-toc="sass-other-features">Sass Other features</h2><section class="chapter"><h3 id="conditionals" data-toc="conditionals">Conditionals</h3><div class="code-block" data-lang="none">
+@if $position == 'left' {
+     position: absolute;
+     left: 0;
+}
+@else if $position == 'right' {
+     position: absolute;
+     right: 0;
+}
+@else {
+     position: static;
+}
+</div></section><section class="chapter"><h3 id="interpolation" data-toc="interpolation">Interpolation</h3><div class="code-block" data-lang="none">
+.#{$klass} { ... }      // Class
+call($function-name)    // Functions
+
+@media #{$tablet}
+font: #{$size}/#{$line-height}
+url(&quot;#{$background}.jpg&quot;)
+</div></section><section class="chapter"><h3 id="lists" data-toc="lists">Lists</h3><div class="code-block" data-lang="none">
+$list: (a b c);
+
+nth($list, 1)  // starts with 1
+length($list)
+
+@each $item in $list { ... }
+</div></section><section class="chapter"><h3 id="maps" data-toc="maps">Maps</h3><div class="code-block" data-lang="none">
+$map: (key1: value1, key2: value2, key3: value3);
+
+map-get($map, key1)
+</div></section></section><div class="last-modified">Last modified: 06 March 2024</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="postman.html" class="navigation-links__prev">Postman</a><a href="grep.html" class="navigation-links__next">Grep</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.6.6-b205/app.js"></script></body></html>

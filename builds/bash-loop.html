@@ -1,0 +1,78 @@
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html lang="en-US" data-colors-preset="contrast" data-primary-color="#307FFF"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="robots" content="noindex"><meta name="built-on" content="2024-03-06T16:31:39.070922"><title>Loop | Help Instance</title><script type="application/json" id="virtual-toc-data">[{"id":"basic-for-loop","level":0,"title":"Basic for loop","anchor":"#basic-for-loop"},{"id":"c-like-for-loop","level":0,"title":"C-like for loop","anchor":"#c-like-for-loop"},{"id":"ranges","level":0,"title":"Ranges","anchor":"#ranges"},{"id":"with-step-size","level":0,"title":"With step size","anchor":"#with-step-size"},{"id":"auto-increment","level":0,"title":"Auto increment","anchor":"#auto-increment"},{"id":"auto-decrement","level":0,"title":"Auto decrement","anchor":"#auto-decrement"},{"id":"continue","level":0,"title":"Continue","anchor":"#continue"},{"id":"break","level":0,"title":"Break","anchor":"#break"},{"id":"until","level":0,"title":"Until","anchor":"#until"},{"id":"forever","level":0,"title":"Forever","anchor":"#forever"},{"id":"forever-shorthand","level":0,"title":"Forever (shorthand)","anchor":"#forever-shorthand"},{"id":"reading-lines","level":0,"title":"Reading lines","anchor":"#reading-lines"}]</script><script type="application/json" id="topic-shortcuts"></script><link href="https://resources.jetbrains.com/writerside/apidoc/6.6.6-b205/app.css" rel="stylesheet"><link rel="apple-touch-icon" sizes="180x180" href="https://jetbrains.com/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://jetbrains.com/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://jetbrains.com/favicon-16x16.png"><link rel="manifest" href="site.webmanifest"><meta name="msapplication-TileColor" content="#000000"><meta name="msapplication-TileImage" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-144x144.png"><meta name="msapplication-square70x70logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-70x70.png"><meta name="msapplication-square150x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-150x150.png"><meta name="msapplication-wide310x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x150.png"><meta name="msapplication-square310x310logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x310.png"><meta name="image" content=""><!-- Open Graph --><meta property="og:title" content="Loop | Help Instance"><meta property="og:description" content=""><meta property="og:image" content=""><meta property="og:site_name" content="Help Instance Help"><meta property="og:type" content="website"><meta property="og:locale" content="en_US"><meta property="og:url" content="bash-loop.html"><!-- End Open Graph --><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content=""><meta name="twitter:title" content="Loop | Help Instance"><meta name="twitter:description" content=""><meta name="twitter:creator" content=""><meta name="twitter:image:src" content=""><!-- End Twitter Card --><!-- Schema.org WebPage --><script type="application/ld+json">{
+    "@context": "http://schema.org",
+    "@type": "WebPage",
+    "@id": "bash-loop.html#webpage",
+    "url": "bash-loop.html",
+    "name": "Loop | Help Instance",
+    "description": "",
+    "image": "",
+    "inLanguage":"en-US"
+}</script><!-- End Schema.org --><!-- Schema.org WebSite --><script type="application/ld+json">{
+    "@type": "WebSite",
+    "@id": "/#website",
+    "url": "/",
+    "name": "Help Instance Help"
+}</script><!-- End Schema.org --></head><body data-id="Bash-Loop" data-main-title="Loop" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="Bash.md|Bash"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Help Instance  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="Bash-Loop" id="Bash-Loop.md">Loop</h1><section class="chapter"><h2 id="basic-for-loop" data-toc="basic-for-loop">Basic for loop</h2><div class="code-block" data-lang="bash">
+for i in /etc/rc.*; do
+    echo $i
+done
+</div></section><section class="chapter"><h2 id="c-like-for-loop" data-toc="c-like-for-loop">C-like for loop</h2><div class="code-block" data-lang="bash">
+for ((i = 0 ; i &lt; 100 ; i++)); do
+    echo $i
+done
+</div></section><section class="chapter"><h2 id="ranges" data-toc="ranges">Ranges</h2><div class="code-block" data-lang="bash">
+for i in {1..5}; do
+    echo &quot;Welcome $i&quot;
+done
+</div></section><section class="chapter"><h2 id="with-step-size" data-toc="with-step-size">With step size</h2><div class="code-block" data-lang="bash">
+for i in {5..50..5}; do
+    echo &quot;Welcome $i&quot;
+done
+</div></section><section class="chapter"><h2 id="auto-increment" data-toc="auto-increment">Auto increment</h2><div class="code-block" data-lang="bash">
+i=1
+while [[ $i -lt 4 ]]; do
+    echo &quot;Number: $i&quot;
+    ((i++))
+done
+</div></section><section class="chapter"><h2 id="auto-decrement" data-toc="auto-decrement">Auto decrement</h2><div class="code-block" data-lang="bash">
+i=3
+while [[ $i -gt 0 ]]; do
+    echo &quot;Number: $i&quot;
+    ((i--))
+done
+</div></section><section class="chapter"><h2 id="continue" data-toc="continue">Continue</h2><div class="code-block" data-lang="bash">
+for number in $(seq 1 3); do
+    if [[ $number == 2 ]]; then
+        continue;
+    fi
+    echo &quot;$number&quot;
+done
+</div></section><section class="chapter"><h2 id="break" data-toc="break">Break</h2><div class="code-block" data-lang="bash">
+for number in $(seq 1 3); do
+    if [[ $number == 2 ]]; then
+        # Skip entire rest of loop.
+        break;
+    fi
+    # This will only print 1
+    echo &quot;$number&quot;
+done
+</div></section><section class="chapter"><h2 id="until" data-toc="until">Until</h2><div class="code-block" data-lang="bash">
+count=0
+until [ $count -gt 10 ]; do
+    echo &quot;$count&quot;
+    ((count++))
+done
+</div></section><section class="chapter"><h2 id="forever" data-toc="forever">Forever</h2><div class="code-block" data-lang="bash">
+while true; do
+    # here is some code.
+done
+</div></section><section class="chapter"><h2 id="forever-shorthand" data-toc="forever-shorthand">Forever (shorthand)</h2><div class="code-block" data-lang="bash">
+while :; do
+    # here is some code.
+done
+</div></section><section class="chapter"><h2 id="reading-lines" data-toc="reading-lines">Reading lines</h2><div class="code-block" data-lang="bash">
+cat file.txt | while read line; do
+    echo $line
+done
+</div></section><div class="last-modified">Last modified: 06 March 2024</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="bash-conditionals.html" class="navigation-links__prev">Conditionals</a><a href="bash-functions.html" class="navigation-links__next">Functions</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.6.6-b205/app.js"></script></body></html>

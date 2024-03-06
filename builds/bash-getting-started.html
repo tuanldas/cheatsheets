@@ -1,0 +1,61 @@
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html lang="en-US" data-colors-preset="contrast" data-primary-color="#307FFF"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="robots" content="noindex"><meta name="built-on" content="2024-03-06T16:31:39.118378"><title>Getting Started | Help Instance</title><script type="application/json" id="virtual-toc-data">[{"id":"hello-sh","level":0,"title":"hello.sh","anchor":"#hello-sh"},{"id":"variables","level":0,"title":"Variables","anchor":"#variables"},{"id":"arguments","level":0,"title":"Arguments","anchor":"#arguments"},{"id":"conditionals","level":0,"title":"Conditionals","anchor":"#conditionals"},{"id":"shell-execution","level":0,"title":"Shell execution","anchor":"#shell-execution"}]</script><script type="application/json" id="topic-shortcuts"></script><link href="https://resources.jetbrains.com/writerside/apidoc/6.6.6-b205/app.css" rel="stylesheet"><link rel="apple-touch-icon" sizes="180x180" href="https://jetbrains.com/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://jetbrains.com/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://jetbrains.com/favicon-16x16.png"><link rel="manifest" href="site.webmanifest"><meta name="msapplication-TileColor" content="#000000"><meta name="msapplication-TileImage" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-144x144.png"><meta name="msapplication-square70x70logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-70x70.png"><meta name="msapplication-square150x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-150x150.png"><meta name="msapplication-wide310x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x150.png"><meta name="msapplication-square310x310logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x310.png"><meta name="image" content=""><!-- Open Graph --><meta property="og:title" content="Getting Started | Help Instance"><meta property="og:description" content=""><meta property="og:image" content=""><meta property="og:site_name" content="Help Instance Help"><meta property="og:type" content="website"><meta property="og:locale" content="en_US"><meta property="og:url" content="bash-getting-started.html"><!-- End Open Graph --><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content=""><meta name="twitter:title" content="Getting Started | Help Instance"><meta name="twitter:description" content=""><meta name="twitter:creator" content=""><meta name="twitter:image:src" content=""><!-- End Twitter Card --><!-- Schema.org WebPage --><script type="application/ld+json">{
+    "@context": "http://schema.org",
+    "@type": "WebPage",
+    "@id": "bash-getting-started.html#webpage",
+    "url": "bash-getting-started.html",
+    "name": "Getting Started | Help Instance",
+    "description": "",
+    "image": "",
+    "inLanguage":"en-US"
+}</script><!-- End Schema.org --><!-- Schema.org WebSite --><script type="application/ld+json">{
+    "@type": "WebSite",
+    "@id": "/#website",
+    "url": "/",
+    "name": "Help Instance Help"
+}</script><!-- End Schema.org --></head><body data-id="Bash-Getting-Started" data-main-title="Getting Started" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="Bash.md|Bash"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Help Instance  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="Bash-Getting-Started" id="Bash-Getting-Started.md">Getting Started</h1><section class="chapter"><h2 id="hello-sh" data-toc="hello-sh">hello.sh</h2><div class="code-block" data-lang="bash">
+#!/bin/bash
+
+VAR=&quot;world&quot;
+echo &quot;Hello $VAR!&quot; # =&gt; Hello world!
+</div><p id="78d4d037_3">Execute the script</p><div class="code-block" data-lang="bash">
+$ bash hello.sh
+</div></section><section class="chapter"><h2 id="variables" data-toc="variables">Variables</h2><div class="code-block" data-lang="bash">
+NAME=&quot;John&quot;
+
+echo ${NAME}    # =&gt; John (Variables)
+echo $NAME      # =&gt; John (Variables)
+echo &quot;$NAME&quot;    # =&gt; John (Variables)
+echo '$NAME'    # =&gt; $NAME (Exact string)
+echo &quot;${NAME}!&quot; # =&gt; John! (Variables)
+
+NAME = &quot;John&quot;   # =&gt; Error (about space)
+</div><p id="78d4d037_6">Comments</p><div class="code-block" data-lang="bash">
+# This is an inline Bash comment.
+</div><div class="code-block" data-lang="bash">
+: '
+This is a
+very neat comment
+in bash
+'
+</div><p id="78d4d037_9">Multi-line comments use <code class="code" id="78d4d037_10">:'</code> to open and <code class="code" id="78d4d037_11">'</code> to close</p></section><section class="chapter"><h2 id="arguments" data-toc="arguments">Arguments</h2><div class="table-wrapper"><table class="wide" id="78d4d037_12"><thead><tr class="ijRowHead" id="78d4d037_13"><th id="78d4d037_14"><p>Expression</p></th><th id="78d4d037_15"><p>Description</p></th></tr></thead><tbody><tr id="78d4d037_16"><td id="78d4d037_17"><p><code class="code" id="78d4d037_18">$1</code>&hellip; <code class="code" id="78d4d037_19">$9</code></p></td><td id="78d4d037_20"><p>Parameter 1 ... 9</p></td></tr><tr id="78d4d037_21"><td id="78d4d037_22"><p><code class="code" id="78d4d037_23">$0</code></p></td><td id="78d4d037_24"><p>Name of the script itself</p></td></tr><tr id="78d4d037_25"><td id="78d4d037_26"><p><code class="code" id="78d4d037_27">$1</code></p></td><td id="78d4d037_28"><p>First argument</p></td></tr><tr id="78d4d037_29"><td id="78d4d037_30"><p><code class="code" id="78d4d037_31">${10}</code></p></td><td id="78d4d037_32"><p>Positional parameter 10</p></td></tr><tr id="78d4d037_33"><td id="78d4d037_34"><p><code class="code" id="78d4d037_35">$#</code></p></td><td id="78d4d037_36"><p>Number of arguments</p></td></tr><tr id="78d4d037_37"><td id="78d4d037_38"><p><code class="code" id="78d4d037_39">$$</code></p></td><td id="78d4d037_40"><p>Process id of the shell</p></td></tr><tr id="78d4d037_41"><td id="78d4d037_42"><p><code class="code" id="78d4d037_43">$*</code></p></td><td id="78d4d037_44"><p>All arguments</p></td></tr><tr id="78d4d037_45"><td id="78d4d037_46"><p><code class="code" id="78d4d037_47">$@</code></p></td><td id="78d4d037_48"><p>All arguments, starting from first</p></td></tr><tr id="78d4d037_49"><td id="78d4d037_50"><p><code class="code" id="78d4d037_51">$-</code></p></td><td id="78d4d037_52"><p>Current options</p></td></tr><tr id="78d4d037_53"><td id="78d4d037_54"><p><code class="code" id="78d4d037_55">$_</code></p></td><td id="78d4d037_56"><p>Last argument of the previous command</p></td></tr></tbody></table></div><p id="78d4d037_57">See: <a href="http://wiki.bash-hackers.org/syntax/shellvars#special_parameters_and_shell_variables" id="78d4d037_58" data-external="true" rel="noopener noreferrer">Special parameters</a></p><p id="78d4d037_59">Functions</p><div class="code-block" data-lang="bash">
+get_name() {
+    echo &quot;John&quot;
+}
+
+echo &quot;You are $(get_name)&quot;
+</div><p id="78d4d037_61">See: <a href="bash-functions.html" id="78d4d037_62" data-tooltip="Functions myfunc() { echo &quot;hello $1&quot; } # Same as above (alternate syntax) function myfunc() { echo &quot;hello $1&quot; } myfunc &quot;John&quot; myfunc() { local myresult='some value' echo $myresult } result=&quot;$(myfunc)&quot; myfunc() { return 1 } if myfunc; then echo&hellip;">Functions</a></p></section><section class="chapter"><h2 id="conditionals" data-toc="conditionals">Conditionals</h2><div class="code-block" data-lang="bash">
+if [[ -z &quot;$string&quot; ]]; then
+    echo &quot;String is empty&quot;
+elif [[ -n &quot;$string&quot; ]]; then
+    echo &quot;String is not empty&quot;
+fi
+</div><p id="78d4d037_64">See: <a href="bash-conditionals.html" id="78d4d037_65" data-tooltip="Conditionals ConditionDescription [[ NUM -eq NUM ]]Equal [[ NUM -ne NUM ]]Not equal [[ NUM -lt NUM ]]Less than [[ NUM -le NUM ]]Less than or equal [[ NUM -gt NUM ]]Greater than [[ NUM -ge NUM ]]Greater than or equal (( NUM &lt; NUM ))Less than (( NUM &lt;= NUM ))Less than or equal&hellip;">Conditionals</a></p><p id="78d4d037_66">Brace expansion</p><div class="code-block" data-lang="bash">
+echo {A,B}.js
+</div><div class="table-wrapper"><table class="wide" id="78d4d037_69"><thead><tr class="ijRowHead" id="78d4d037_70"><th id="78d4d037_71"><p>Expression</p></th><th id="78d4d037_72"><p>Description</p></th></tr></thead><tbody><tr id="78d4d037_73"><td id="78d4d037_74"><p><code class="code" id="78d4d037_75">{A,B}</code></p></td><td id="78d4d037_76"><p>Same as <code class="code" id="78d4d037_77">A B</code></p></td></tr><tr id="78d4d037_78"><td id="78d4d037_79"><p><code class="code" id="78d4d037_80">{A,B}.js</code></p></td><td id="78d4d037_81"><p>Same as <code class="code" id="78d4d037_82">A.js B.js</code></p></td></tr><tr id="78d4d037_83"><td id="78d4d037_84"><p><code class="code" id="78d4d037_85">{1..5}</code></p></td><td id="78d4d037_86"><p>Same as <code class="code" id="78d4d037_87">1 2 3 4 5</code></p></td></tr></tbody></table></div><p id="78d4d037_88">See: <a href="http://wiki.bash-hackers.org/syntax/expansion/brace" id="78d4d037_89" data-external="true" rel="noopener noreferrer">Brace expansion</a></p></section><section class="chapter"><h2 id="shell-execution" data-toc="shell-execution">Shell execution</h2><div class="code-block" data-lang="bash">
+# =&gt; I'm in /path/of/current
+echo &quot;I'm in $(PWD)&quot;
+
+# Same as:
+echo &quot;I'm in `pwd`&quot;
+</div><p id="78d4d037_91">See: <a href="http://wiki.bash-hackers.org/syntax/expansion/cmdsubst" id="78d4d037_92" data-external="true" rel="noopener noreferrer">Command substitution</a></p></section><div class="last-modified">Last modified: 06 March 2024</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="bash.html" class="navigation-links__prev">Bash</a><a href="bash-parameter-expansions.html" class="navigation-links__next">Bash Parameter expansions</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.6.6-b205/app.js"></script></body></html>

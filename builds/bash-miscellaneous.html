@@ -1,0 +1,116 @@
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html lang="en-US" data-colors-preset="contrast" data-primary-color="#307FFF"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="robots" content="noindex"><meta name="built-on" content="2024-03-06T16:31:39.066549"><title>Miscellaneous | Help Instance</title><script type="application/json" id="virtual-toc-data">[{"id":"numeric-calculations","level":0,"title":"Numeric calculations","anchor":"#numeric-calculations"},{"id":"subshells","level":0,"title":"Subshells","anchor":"#subshells"},{"id":"inspecting-commands","level":0,"title":"Inspecting commands","anchor":"#inspecting-commands"},{"id":"redirection","level":0,"title":"Redirection","anchor":"#redirection"},{"id":"source-relative","level":0,"title":"Source relative","anchor":"#source-relative"},{"id":"directory-of-script","level":0,"title":"Directory of script","anchor":"#directory-of-script"},{"id":"case-switch","level":0,"title":"Case/switch","anchor":"#case-switch"},{"id":"trap-errors","level":0,"title":"Trap errors","anchor":"#trap-errors"},{"id":"printf","level":0,"title":"printf","anchor":"#printf"},{"id":"getting-options","level":0,"title":"Getting options","anchor":"#getting-options"},{"id":"check-for-command-s-result","level":0,"title":"Check for command\u0027s result","anchor":"#check-for-command-s-result"},{"id":"special-variables","level":0,"title":"Special variables","anchor":"#special-variables"},{"id":"grep-check","level":0,"title":"Grep check","anchor":"#grep-check"},{"id":"backslash-escapes","level":0,"title":"Backslash escapes","anchor":"#backslash-escapes"},{"id":"heredoc","level":0,"title":"Heredoc","anchor":"#heredoc"},{"id":"go-to-previous-directory","level":0,"title":"Go to previous directory","anchor":"#go-to-previous-directory"},{"id":"reading-input","level":0,"title":"Reading input","anchor":"#reading-input"},{"id":"conditional-execution","level":0,"title":"Conditional execution","anchor":"#conditional-execution"},{"id":"strict-mode","level":0,"title":"Strict mode","anchor":"#strict-mode"},{"id":"optional-arguments","level":0,"title":"Optional arguments","anchor":"#optional-arguments"}]</script><script type="application/json" id="topic-shortcuts"></script><link href="https://resources.jetbrains.com/writerside/apidoc/6.6.6-b205/app.css" rel="stylesheet"><link rel="apple-touch-icon" sizes="180x180" href="https://jetbrains.com/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://jetbrains.com/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://jetbrains.com/favicon-16x16.png"><link rel="manifest" href="site.webmanifest"><meta name="msapplication-TileColor" content="#000000"><meta name="msapplication-TileImage" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-144x144.png"><meta name="msapplication-square70x70logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-70x70.png"><meta name="msapplication-square150x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-150x150.png"><meta name="msapplication-wide310x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x150.png"><meta name="msapplication-square310x310logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x310.png"><meta name="image" content=""><!-- Open Graph --><meta property="og:title" content="Miscellaneous | Help Instance"><meta property="og:description" content=""><meta property="og:image" content=""><meta property="og:site_name" content="Help Instance Help"><meta property="og:type" content="website"><meta property="og:locale" content="en_US"><meta property="og:url" content="bash-miscellaneous.html"><!-- End Open Graph --><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content=""><meta name="twitter:title" content="Miscellaneous | Help Instance"><meta name="twitter:description" content=""><meta name="twitter:creator" content=""><meta name="twitter:image:src" content=""><!-- End Twitter Card --><!-- Schema.org WebPage --><script type="application/ld+json">{
+    "@context": "http://schema.org",
+    "@type": "WebPage",
+    "@id": "bash-miscellaneous.html#webpage",
+    "url": "bash-miscellaneous.html",
+    "name": "Miscellaneous | Help Instance",
+    "description": "",
+    "image": "",
+    "inLanguage":"en-US"
+}</script><!-- End Schema.org --><!-- Schema.org WebSite --><script type="application/ld+json">{
+    "@type": "WebSite",
+    "@id": "/#website",
+    "url": "/",
+    "name": "Help Instance Help"
+}</script><!-- End Schema.org --></head><body data-id="Bash-Miscellaneous" data-main-title="Miscellaneous" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="Bash.md|Bash"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Help Instance  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="Bash-Miscellaneous" id="Bash-Miscellaneous.md">Miscellaneous</h1><section class="chapter"><h2 id="numeric-calculations" data-toc="numeric-calculations">Numeric calculations</h2><div class="code-block" data-lang="bash">
+$((a + 200))      # Add 200 to $a
+</div><div class="code-block" data-lang="bash">
+$(($RANDOM%200))  # Random number 0..199
+</div></section><section class="chapter"><h2 id="subshells" data-toc="subshells">Subshells</h2><div class="code-block" data-lang="bash">
+(cd somedir; echo &quot;I'm now in $PWD&quot;)
+pwd # still in first directory
+</div></section><section class="chapter"><h2 id="inspecting-commands" data-toc="inspecting-commands">Inspecting commands</h2><div class="code-block" data-lang="bash">
+command -V cd
+#=&gt; &quot;cd is a function/alias/whatever&quot;
+</div></section><section class="chapter"><h2 id="redirection" data-toc="redirection">Redirection</h2><div class="code-block" data-lang="bash">
+python hello.py &gt; output.txt   # stdout to (file)
+python hello.py &gt;&gt; output.txt  # stdout to (file), append
+python hello.py 2&gt; error.log   # stderr to (file)
+python hello.py 2&gt;&amp;1           # stderr to stdout
+python hello.py 2&gt;/dev/null    # stderr to (null)
+python hello.py &amp;&gt;/dev/null    # stdout and stderr to (null)
+</div><div class="code-block" data-lang="bash">
+python hello.py &lt; foo.txt      # feed foo.txt to stdin for python
+</div></section><section class="chapter"><h2 id="source-relative" data-toc="source-relative">Source relative</h2><div class="code-block" data-lang="bash">
+source &quot;${0%/*}/../share/foo.sh&quot;
+</div></section><section class="chapter"><h2 id="directory-of-script" data-toc="directory-of-script">Directory of script</h2><div class="code-block" data-lang="bash">
+DIR=&quot;${0%/*}&quot;
+</div></section><section class="chapter"><h2 id="case-switch" data-toc="case-switch">Case/switch</h2><div class="code-block" data-lang="bash">
+case &quot;$1&quot; in
+    start | up)
+    vagrant up
+    ;;
+
+    *)
+    echo &quot;Usage: $0 {start|stop|ssh}&quot;
+    ;;
+esac
+</div></section><section class="chapter"><h2 id="trap-errors" data-toc="trap-errors">Trap errors</h2><div class="code-block" data-lang="bash">
+trap 'echo Error at about $LINENO' ERR
+</div><p id="89c220c0_12">or</p><div class="code-block" data-lang="bash">
+traperr() {
+    echo &quot;ERROR: ${BASH_SOURCE[1]} at about ${BASH_LINENO[0]}&quot;
+}
+
+set -o errtrace
+trap traperr ERR
+</div></section><section class="chapter"><h2 id="printf" data-toc="printf">printf</h2><div class="code-block" data-lang="bash">
+printf &quot;Hello %s, I'm %s&quot; Sven Olga
+#=&gt; &quot;Hello Sven, I'm Olga
+
+printf &quot;1 + 1 = %d&quot; 2
+#=&gt; &quot;1 + 1 = 2&quot;
+
+printf &quot;Print a float: %f&quot; 2
+#=&gt; &quot;Print a float: 2.000000&quot;
+</div></section><section class="chapter"><h2 id="getting-options" data-toc="getting-options">Getting options</h2><div class="code-block" data-lang="bash">
+while [[ &quot;$1&quot; =~ ^- &amp;&amp; ! &quot;$1&quot; == &quot;--&quot; ]]; do case $1 in
+    -V | --version )
+    echo $version
+    exit
+    ;;
+    -s | --string )
+    shift; string=$1
+    ;;
+    -f | --flag )
+    flag=1
+    ;;
+esac; shift; done
+if [[ &quot;$1&quot; == '--' ]]; then shift; fi
+</div></section><section class="chapter"><h2 id="check-for-command-s-result" data-toc="check-for-command-s-result">Check for command's result</h2><div class="code-block" data-lang="bash">
+if ping -c 1 google.com; then
+    echo &quot;It appears you have a working internet connection&quot;
+fi
+</div></section><section class="chapter"><h2 id="special-variables" data-toc="special-variables">Special variables</h2><div class="table-wrapper"><table class="wide" id="89c220c0_17"><thead><tr class="ijRowHead" id="89c220c0_18"><th id="89c220c0_19"><p>Expression</p></th><th id="89c220c0_20"><p>Description</p></th></tr></thead><tbody><tr id="89c220c0_21"><td id="89c220c0_22"><p><code class="code" id="89c220c0_23">$?</code></p></td><td id="89c220c0_24"><p>Exit status of last task</p></td></tr><tr id="89c220c0_25"><td id="89c220c0_26"><p><code class="code" id="89c220c0_27">$!</code></p></td><td id="89c220c0_28"><p>PID of last background task</p></td></tr><tr id="89c220c0_29"><td id="89c220c0_30"><p><code class="code" id="89c220c0_31">$$</code></p></td><td id="89c220c0_32"><p>PID of shell</p></td></tr><tr id="89c220c0_33"><td id="89c220c0_34"><p><code class="code" id="89c220c0_35">$0</code></p></td><td id="89c220c0_36"><p>Filename of the shell script</p></td></tr></tbody></table></div><p id="89c220c0_37">See <a href="http://wiki.bash-hackers.org/syntax/shellvars#special_parameters_and_shell_variables" id="89c220c0_38" data-external="true" rel="noopener noreferrer">Special parameters</a>.</p></section><section class="chapter"><h2 id="grep-check" data-toc="grep-check">Grep check</h2><div class="code-block" data-lang="bash">
+if grep -q 'foo' ~/.bash_history; then
+    echo &quot;You appear to have typed 'foo' in the past&quot;
+fi
+</div></section><section class="chapter"><h2 id="backslash-escapes" data-toc="backslash-escapes">Backslash escapes</h2><ul class="list _ul" id="89c220c0_40"><li class="list__item" id="89c220c0_41"><p>&nbsp;</p></li><li class="list__item" id="89c220c0_42"><p>!</p></li><li class="list__item" id="89c220c0_43"><p>&quot;</p></li><li class="list__item" id="89c220c0_44"><p>#</p></li><li class="list__item" id="89c220c0_45"><p>&amp;</p></li><li class="list__item" id="89c220c0_46"><p>'</p></li><li class="list__item" id="89c220c0_47"><p>(</p></li><li class="list__item" id="89c220c0_48"><p>)</p></li><li class="list__item" id="89c220c0_49"><p>,</p></li><li class="list__item" id="89c220c0_50"><p>;</p></li><li class="list__item" id="89c220c0_51"><p>&lt;</p></li><li class="list__item" id="89c220c0_52"><p>&gt;</p></li><li class="list__item" id="89c220c0_53"><p>[</p></li><li class="list__item" id="89c220c0_54"><p>|</p></li><li class="list__item" id="89c220c0_55"><p>\</p></li><li class="list__item" id="89c220c0_56"><p>]</p></li><li class="list__item" id="89c220c0_57"><p>^</p></li><li class="list__item" id="89c220c0_58"><p>{</p></li><li class="list__item" id="89c220c0_59"><p>}</p></li><li class="list__item" id="89c220c0_60"><p>`</p></li><li class="list__item" id="89c220c0_61"><p>$</p></li><li class="list__item" id="89c220c0_62"><p>*</p></li><li class="list__item" id="89c220c0_63"><p>?</p></li></ul><p id="89c220c0_64">Escape these special characters with <code class="code" id="89c220c0_65">\</code></p></section><section class="chapter"><h2 id="heredoc" data-toc="heredoc">Heredoc</h2><div class="code-block" data-lang="none">
+cat &lt;&lt;END
+hello world
+END
+</div></section><section class="chapter"><h2 id="go-to-previous-directory" data-toc="go-to-previous-directory">Go to previous directory</h2><div class="code-block" data-lang="bash">
+pwd # /home/user/foo
+cd bar/
+pwd # /home/user/foo/bar
+cd -
+pwd # /home/user/foo
+</div></section><section class="chapter"><h2 id="reading-input" data-toc="reading-input">Reading input</h2><div class="code-block" data-lang="bash">
+echo -n &quot;Proceed? [y/n]: &quot;
+read ans
+echo $ans
+</div><div class="code-block" data-lang="bash">
+read -n 1 ans    # Just one character
+</div></section><section class="chapter"><h2 id="conditional-execution" data-toc="conditional-execution">Conditional execution</h2><div class="code-block" data-lang="bash">
+git commit &amp;&amp; git push
+git commit || echo &quot;Commit failed&quot;
+</div></section><section class="chapter"><h2 id="strict-mode" data-toc="strict-mode">Strict mode</h2><div class="code-block" data-lang="bash">
+set -euo pipefail
+IFS=$'\n\t'
+</div><p id="89c220c0_72">See: <a href="http://redsymbol.net/articles/unofficial-bash-strict-mode/" id="89c220c0_73" data-external="true" rel="noopener noreferrer">Unofficial bash strict mode</a></p></section><section class="chapter"><h2 id="optional-arguments" data-toc="optional-arguments">Optional arguments</h2><div class="code-block" data-lang="bash">
+args=(&quot;$@&quot;)
+args+=(foo)
+args+=(bar)
+echo &quot;${args[@]}&quot;
+</div><p id="89c220c0_75">Put the arguments into an array and then append</p></section><div class="last-modified">Last modified: 06 March 2024</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="bash-history.html" class="navigation-links__prev">History</a><a href="cron.html" class="navigation-links__next">Cron</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.6.6-b205/app.js"></script></body></html>

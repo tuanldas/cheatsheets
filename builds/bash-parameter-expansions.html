@@ -1,0 +1,64 @@
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html lang="en-US" data-colors-preset="contrast" data-primary-color="#307FFF"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="robots" content="noindex"><meta name="built-on" content="2024-03-06T16:31:39.126917"><title>Bash Parameter expansions | Help Instance</title><script type="application/json" id="virtual-toc-data">[{"id":"syntax","level":0,"title":"Syntax","anchor":"#syntax"},{"id":"substrings","level":0,"title":"Substrings","anchor":"#substrings"},{"id":"length","level":0,"title":"Length","anchor":"#length"},{"id":"default-values","level":0,"title":"Default values","anchor":"#default-values"},{"id":"substitution","level":0,"title":"Substitution","anchor":"#substitution"},{"id":"slicing","level":0,"title":"Slicing","anchor":"#slicing"},{"id":"basepath-dirpath","level":0,"title":"basepath \u0026 dirpath","anchor":"#basepath-dirpath"},{"id":"transform","level":0,"title":"Transform","anchor":"#transform"}]</script><script type="application/json" id="topic-shortcuts"></script><link href="https://resources.jetbrains.com/writerside/apidoc/6.6.6-b205/app.css" rel="stylesheet"><link rel="apple-touch-icon" sizes="180x180" href="https://jetbrains.com/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://jetbrains.com/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://jetbrains.com/favicon-16x16.png"><link rel="manifest" href="site.webmanifest"><meta name="msapplication-TileColor" content="#000000"><meta name="msapplication-TileImage" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-144x144.png"><meta name="msapplication-square70x70logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-70x70.png"><meta name="msapplication-square150x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-150x150.png"><meta name="msapplication-wide310x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x150.png"><meta name="msapplication-square310x310logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x310.png"><meta name="image" content=""><!-- Open Graph --><meta property="og:title" content="Bash Parameter expansions | Help Instance"><meta property="og:description" content=""><meta property="og:image" content=""><meta property="og:site_name" content="Help Instance Help"><meta property="og:type" content="website"><meta property="og:locale" content="en_US"><meta property="og:url" content="bash-parameter-expansions.html"><!-- End Open Graph --><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content=""><meta name="twitter:title" content="Bash Parameter expansions | Help Instance"><meta name="twitter:description" content=""><meta name="twitter:creator" content=""><meta name="twitter:image:src" content=""><!-- End Twitter Card --><!-- Schema.org WebPage --><script type="application/ld+json">{
+    "@context": "http://schema.org",
+    "@type": "WebPage",
+    "@id": "bash-parameter-expansions.html#webpage",
+    "url": "bash-parameter-expansions.html",
+    "name": "Bash Parameter expansions | Help Instance",
+    "description": "",
+    "image": "",
+    "inLanguage":"en-US"
+}</script><!-- End Schema.org --><!-- Schema.org WebSite --><script type="application/ld+json">{
+    "@type": "WebSite",
+    "@id": "/#website",
+    "url": "/",
+    "name": "Help Instance Help"
+}</script><!-- End Schema.org --></head><body data-id="Bash-Parameter-expansions" data-main-title="Bash Parameter expansions" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="Bash.md|Bash"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Help Instance  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="Bash-Parameter-expansions" id="Bash-Parameter-expansions.md">Bash Parameter expansions</h1><section class="chapter"><h2 id="syntax" data-toc="syntax">Syntax</h2><div class="table-wrapper"><table class="wide" id="63f8b6da_2"><thead><tr class="ijRowHead" id="63f8b6da_3"><th id="63f8b6da_4"><p>Code</p></th><th id="63f8b6da_5"><p>Description</p></th></tr></thead><tbody><tr id="63f8b6da_6"><td id="63f8b6da_7"><p><code class="code" id="63f8b6da_8">${FOO%suffix}</code></p></td><td id="63f8b6da_9"><p>Remove suffix</p></td></tr><tr id="63f8b6da_10"><td id="63f8b6da_11"><p><code class="code" id="63f8b6da_12">${FOO#prefix}</code></p></td><td id="63f8b6da_13"><p>Remove prefix</p></td></tr><tr id="63f8b6da_14"><td id="63f8b6da_15"><p><code class="code" id="63f8b6da_16">${FOO%%suffix}</code></p></td><td id="63f8b6da_17"><p>Remove long suffix</p></td></tr><tr id="63f8b6da_18"><td id="63f8b6da_19"><p><code class="code" id="63f8b6da_20">${FOO##prefix}</code></p></td><td id="63f8b6da_21"><p>Remove long prefix</p></td></tr><tr id="63f8b6da_22"><td id="63f8b6da_23"><p><code class="code" id="63f8b6da_24">${FOO/from/to}</code></p></td><td id="63f8b6da_25"><p>Replace first match</p></td></tr><tr id="63f8b6da_26"><td id="63f8b6da_27"><p><code class="code" id="63f8b6da_28">${FOO//from/to}</code></p></td><td id="63f8b6da_29"><p>Replace all</p></td></tr><tr id="63f8b6da_30"><td id="63f8b6da_31"><p><code class="code" id="63f8b6da_32">${FOO/%from/to}</code></p></td><td id="63f8b6da_33"><p>Replace suffix</p></td></tr><tr id="63f8b6da_34"><td id="63f8b6da_35"><p><code class="code" id="63f8b6da_36">${FOO/#from/to}</code></p></td><td id="63f8b6da_37"><p>Replace prefix</p></td></tr></tbody></table></div></section><section class="chapter"><h2 id="substrings" data-toc="substrings">Substrings</h2><div class="table-wrapper"><table class="wide" id="63f8b6da_38"><thead><tr class="ijRowHead" id="63f8b6da_39"><th id="63f8b6da_40"><p>Expression</p></th><th id="63f8b6da_41"><p>Description</p></th></tr></thead><tbody><tr id="63f8b6da_42"><td id="63f8b6da_43"><p><code class="code" id="63f8b6da_44">${FOO:0:3}</code></p></td><td id="63f8b6da_45"><p>Substring <span class="emphasis" id="63f8b6da_46">(position, length)</span></p></td></tr><tr id="63f8b6da_47"><td id="63f8b6da_48"><p><code class="code" id="63f8b6da_49">${FOO:(-3):3}</code></p></td><td id="63f8b6da_50"><p>Substring from the right</p></td></tr></tbody></table></div></section><section class="chapter"><h2 id="length" data-toc="length">Length</h2><div class="table-wrapper"><table class="wide" id="63f8b6da_51"><thead><tr class="ijRowHead" id="63f8b6da_52"><th id="63f8b6da_53"><p>Expression</p></th><th id="63f8b6da_54"><p>Description</p></th></tr></thead><tbody><tr id="63f8b6da_55"><td id="63f8b6da_56"><p><code class="code" id="63f8b6da_57">${#FOO}</code></p></td><td id="63f8b6da_58"><p>Length of <code class="code" id="63f8b6da_59">$FOO</code></p></td></tr></tbody></table></div></section><section class="chapter"><h2 id="default-values" data-toc="default-values">Default values</h2><div class="table-wrapper"><table class="wide" id="63f8b6da_60"><thead><tr class="ijRowHead" id="63f8b6da_61"><th id="63f8b6da_62"><p>Expression</p></th><th id="63f8b6da_63"><p>Description</p></th></tr></thead><tbody><tr id="63f8b6da_64"><td id="63f8b6da_65"><p><code class="code" id="63f8b6da_66">${FOO:-val}</code></p></td><td id="63f8b6da_67"><p><code class="code" id="63f8b6da_68">$FOO</code>, or <code class="code" id="63f8b6da_69">val</code> if unset</p></td></tr><tr id="63f8b6da_70"><td id="63f8b6da_71"><p><code class="code" id="63f8b6da_72">${FOO:=val}</code></p></td><td id="63f8b6da_73"><p>Set <code class="code" id="63f8b6da_74">$FOO</code> to <code class="code" id="63f8b6da_75">val</code> if unset</p></td></tr><tr id="63f8b6da_76"><td id="63f8b6da_77"><p><code class="code" id="63f8b6da_78">${FOO:+val}</code></p></td><td id="63f8b6da_79"><p><code class="code" id="63f8b6da_80">val</code> if <code class="code" id="63f8b6da_81">$FOO</code> is set</p></td></tr><tr id="63f8b6da_82"><td id="63f8b6da_83"><p><code class="code" id="63f8b6da_84">${FOO:?message}</code></p></td><td id="63f8b6da_85"><p>Show message and exit if <code class="code" id="63f8b6da_86">$FOO</code> is unset</p></td></tr></tbody></table></div></section><section class="chapter"><h2 id="substitution" data-toc="substitution">Substitution</h2><div class="code-block" data-lang="bash">
+echo ${food:-Cake}  #=&gt; $food or &quot;Cake&quot;
+</div><div class="code-block" data-lang="bash">
+STR=&quot;/path/to/foo.cpp&quot;
+echo ${STR%.cpp}    # /path/to/foo
+echo ${STR%.cpp}.o  # /path/to/foo.o
+echo ${STR%/*}      # /path/to
+
+echo ${STR##*.}     # cpp (extension)
+echo ${STR##*/}     # foo.cpp (basepath)
+
+echo ${STR#*/}      # path/to/foo.cpp
+echo ${STR##*/}     # foo.cpp
+
+echo ${STR/foo/bar} # /path/to/bar.cpp
+</div></section><section class="chapter"><h2 id="slicing" data-toc="slicing">Slicing</h2><div class="code-block" data-lang="bash">
+name=&quot;John&quot;
+echo ${name}           # =&gt; John
+echo ${name:0:2}       # =&gt; Jo
+echo ${name::2}        # =&gt; Jo
+echo ${name::-1}       # =&gt; Joh
+echo ${name:(-1)}      # =&gt; n
+echo ${name:(-2)}      # =&gt; hn
+echo ${name:(-2):2}    # =&gt; hn
+
+length=2
+echo ${name:0:length}  # =&gt; Jo
+</div><p id="63f8b6da_90">See: <a href="http://wiki.bash-hackers.org/syntax/pe" id="63f8b6da_91" data-external="true" rel="noopener noreferrer">Parameter expansion</a></p></section><section class="chapter"><h2 id="basepath-dirpath" data-toc="basepath-dirpath">basepath &amp; dirpath</h2><div class="code-block" data-lang="bash">
+SRC=&quot;/path/to/foo.cpp&quot;
+</div><div class="code-block" data-lang="bash">
+BASEPATH=${SRC##*/}   
+echo $BASEPATH  # =&gt; &quot;foo.cpp&quot;
+
+
+DIRPATH=${SRC%$BASEPATH}
+echo $DIRPATH   # =&gt; &quot;/path/to/&quot;
+</div></section><section class="chapter"><h2 id="transform" data-toc="transform">Transform</h2><div class="code-block" data-lang="bash">
+STR=&quot;HELLO WORLD!&quot;
+echo ${STR,}   # =&gt; hELLO WORLD!
+echo ${STR,,}  # =&gt; hello world!
+
+STR=&quot;hello world!&quot;
+echo ${STR^}   # =&gt; Hello world!
+echo ${STR^^}  # =&gt; HELLO WORLD!
+
+ARR=(hello World)
+echo &quot;${ARR[@],}&quot; # =&gt; hello world
+echo &quot;${ARR[@]^}&quot; # =&gt; Hello World
+</div></section><div class="last-modified">Last modified: 06 March 2024</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="bash-getting-started.html" class="navigation-links__prev">Getting Started</a><a href="bash-arrays.html" class="navigation-links__next">Arrays</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.6.6-b205/app.js"></script></body></html>

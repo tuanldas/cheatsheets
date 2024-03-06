@@ -1,0 +1,118 @@
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html lang="en-US" data-colors-preset="contrast" data-primary-color="#307FFF"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="robots" content="noindex"><meta name="built-on" content="2024-03-06T16:31:39.030182"><title>Google Search | Help Instance</title><script type="application/json" id="virtual-toc-data">[{"id":"getting-started","level":0,"title":"Getting Started","anchor":"#getting-started"},{"id":"find-date-and-time","level":0,"title":"Find Date and Time","anchor":"#find-date-and-time"},{"id":"find-and","level":0,"title":"Find and","anchor":"#find-and"}]</script><script type="application/json" id="topic-shortcuts"></script><link href="https://resources.jetbrains.com/writerside/apidoc/6.6.6-b205/app.css" rel="stylesheet"><link rel="apple-touch-icon" sizes="180x180" href="https://jetbrains.com/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://jetbrains.com/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://jetbrains.com/favicon-16x16.png"><link rel="manifest" href="site.webmanifest"><meta name="msapplication-TileColor" content="#000000"><meta name="msapplication-TileImage" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-144x144.png"><meta name="msapplication-square70x70logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-70x70.png"><meta name="msapplication-square150x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-150x150.png"><meta name="msapplication-wide310x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x150.png"><meta name="msapplication-square310x310logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x310.png"><meta name="image" content=""><!-- Open Graph --><meta property="og:title" content="Google Search | Help Instance"><meta property="og:description" content=""><meta property="og:image" content=""><meta property="og:site_name" content="Help Instance Help"><meta property="og:type" content="website"><meta property="og:locale" content="en_US"><meta property="og:url" content="google-search.html"><!-- End Open Graph --><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content=""><meta name="twitter:title" content="Google Search | Help Instance"><meta name="twitter:description" content=""><meta name="twitter:creator" content=""><meta name="twitter:image:src" content=""><!-- End Twitter Card --><!-- Schema.org WebPage --><script type="application/ld+json">{
+    "@context": "http://schema.org",
+    "@type": "WebPage",
+    "@id": "google-search.html#webpage",
+    "url": "google-search.html",
+    "name": "Google Search | Help Instance",
+    "description": "",
+    "image": "",
+    "inLanguage":"en-US"
+}</script><!-- End Schema.org --><!-- Schema.org WebSite --><script type="application/ld+json">{
+    "@type": "WebSite",
+    "@id": "/#website",
+    "url": "/",
+    "name": "Help Instance Help"
+}</script><!-- End Schema.org --></head><body data-id="Google-Search" data-main-title="Google Search" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs=""><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Help Instance  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="Google-Search" id="Google-Search.md">Google Search</h1><section class="chapter"><h2 id="getting-started" data-toc="getting-started">Getting Started</h2><section class="chapter"><h3 id="usage" data-toc="usage">Usage</h3><div class="code-block" data-lang="bash">
+$ find [path...] [options] [expression]
+</div><p id="d2eb16ec_3">Wildcard</p><div class="code-block" data-lang="bash">
+$ find . -name &quot;*.txt&quot;
+$ find . -name &quot;2020*.csv&quot;
+$ find . -name &quot;json_*&quot;
+</div><ul class="list _ul" id="d2eb16ec_6"><li class="list__item" id="d2eb16ec_7"><p><a href="https://gist.github.com/gr1ev0us/3a9b9d9dbdd38f6379288eb2686fc538" id="d2eb16ec_8" data-external="true" rel="noopener noreferrer">Find cheatsheet</a> <span class="emphasis" id="d2eb16ec_9">(gist.github.com)</span></p></li></ul></section><section class="chapter"><h3 id="option-examples" data-toc="option-examples">Option Examples</h3><div class="table-wrapper"><table class="wide" id="d2eb16ec_10"><thead><tr class="ijRowHead" id="d2eb16ec_11"><th id="d2eb16ec_12"><p>Option</p></th><th id="d2eb16ec_13"><p>Example</p></th><th id="d2eb16ec_14"><p>Description</p></th></tr></thead><tbody><tr id="d2eb16ec_15"><td id="d2eb16ec_16"><p><code class="code" id="d2eb16ec_17">-type</code></p></td><td id="d2eb16ec_18"><p>find . -type d</p></td><td id="d2eb16ec_19"><p>Find only directories</p></td></tr><tr id="d2eb16ec_20"><td id="d2eb16ec_21"><p><code class="code" id="d2eb16ec_22">-name</code></p></td><td id="d2eb16ec_23"><p>find . -type f -name &quot;*.txt&quot;</p></td><td id="d2eb16ec_24"><p>Find file by name</p></td></tr><tr id="d2eb16ec_25"><td id="d2eb16ec_26"><p><code class="code" id="d2eb16ec_27">-iname</code></p></td><td id="d2eb16ec_28"><p>find . -type f -iname &quot;hello&quot;</p></td><td id="d2eb16ec_29"><p>Find file by name (case-insensitive)</p></td></tr><tr id="d2eb16ec_30"><td id="d2eb16ec_31"><p><code class="code" id="d2eb16ec_32">-size</code></p></td><td id="d2eb16ec_33"><p>find . -size +1G</p></td><td id="d2eb16ec_34"><p>Find files larger than 1G</p></td></tr><tr id="d2eb16ec_35"><td id="d2eb16ec_36"><p><code class="code" id="d2eb16ec_37">-user</code></p></td><td id="d2eb16ec_38"><p>find . -type d -user jack</p></td><td id="d2eb16ec_39"><p>Find jack's file</p></td></tr><tr id="d2eb16ec_40"><td id="d2eb16ec_41"><p><code class="code" id="d2eb16ec_42">-regex</code></p></td><td id="d2eb16ec_43"><p>find /var -regex '.*/tmp/.*[0-9]*.file'</p></td><td id="d2eb16ec_44"><p>Using Regex with find.</p></td></tr><tr id="d2eb16ec_45"><td id="d2eb16ec_46"><p><code class="code" id="d2eb16ec_47">-maxdepth</code></p></td><td id="d2eb16ec_48"><p>find . -maxdepth 1 -name &quot;a.txt&quot;</p></td><td id="d2eb16ec_49"><p>In the current directory and subdirectories</p></td></tr><tr id="d2eb16ec_50"><td id="d2eb16ec_51"><p><code class="code" id="d2eb16ec_52">-mindepth</code></p></td><td id="d2eb16ec_53"><p>find / -mindepth 3 -maxdepth 5 -name pass</p></td><td id="d2eb16ec_54"><p>Between sub-directory level 2 and 4</p></td></tr></tbody></table></div></section><section class="chapter"><h3 id="type" data-toc="type">Type</h3><div class="table-wrapper"><table class="wide" id="d2eb16ec_55"><thead><tr class="ijRowHead" id="d2eb16ec_56"><th id="d2eb16ec_57"></th><th id="d2eb16ec_58"></th></tr></thead><tbody><tr id="d2eb16ec_59"><td id="d2eb16ec_60"><p><code class="code" id="d2eb16ec_61">-type d</code></p></td><td id="d2eb16ec_62"><p>Directory</p></td></tr><tr id="d2eb16ec_63"><td id="d2eb16ec_64"><p><code class="code" id="d2eb16ec_65">-type f</code></p></td><td id="d2eb16ec_66"><p>File</p></td></tr><tr id="d2eb16ec_67"><td id="d2eb16ec_68"><p><code class="code" id="d2eb16ec_69">-type l</code></p></td><td id="d2eb16ec_70"><p>Symbolic link</p></td></tr><tr id="d2eb16ec_71"><td id="d2eb16ec_72"><p><code class="code" id="d2eb16ec_73">-type b</code></p></td><td id="d2eb16ec_74"><p>Buffered block</p></td></tr><tr id="d2eb16ec_75"><td id="d2eb16ec_76"><p><code class="code" id="d2eb16ec_77">-type c</code></p></td><td id="d2eb16ec_78"><p>Unbuffered character</p></td></tr><tr id="d2eb16ec_79"><td id="d2eb16ec_80"><p><code class="code" id="d2eb16ec_81">-type p</code></p></td><td id="d2eb16ec_82"><p>Named pipe</p></td></tr><tr id="d2eb16ec_83"><td id="d2eb16ec_84"><p><code class="code" id="d2eb16ec_85">-type s</code></p></td><td id="d2eb16ec_86"><p>Socket</p></td></tr></tbody></table></div></section><section class="chapter"><h3 id="size" data-toc="size">Size</h3><div class="table-wrapper"><table class="wide" id="d2eb16ec_87"><thead><tr class="ijRowHead" id="d2eb16ec_88"><th id="d2eb16ec_89"></th><th id="d2eb16ec_90"></th></tr></thead><tbody><tr id="d2eb16ec_91"><td id="d2eb16ec_92"><p><code class="code" id="d2eb16ec_93">-size b</code></p></td><td id="d2eb16ec_94"><p>512-byte blocks (default)</p></td></tr><tr id="d2eb16ec_95"><td id="d2eb16ec_96"><p><code class="code" id="d2eb16ec_97">-size c</code></p></td><td id="d2eb16ec_98"><p>Bytes</p></td></tr><tr id="d2eb16ec_99"><td id="d2eb16ec_100"><p><code class="code" id="d2eb16ec_101">-size k</code></p></td><td id="d2eb16ec_102"><p>Kilobytes</p></td></tr><tr id="d2eb16ec_103"><td id="d2eb16ec_104"><p><code class="code" id="d2eb16ec_105">-size M</code></p></td><td id="d2eb16ec_106"><p>Megabytes</p></td></tr><tr id="d2eb16ec_107"><td id="d2eb16ec_108"><p><code class="code" id="d2eb16ec_109">-size G</code></p></td><td id="d2eb16ec_110"><p>Gigabytes</p></td></tr><tr id="d2eb16ec_111"><td id="d2eb16ec_112"><p><code class="code" id="d2eb16ec_113">-size T</code></p></td><td id="d2eb16ec_114"><p>Terabytes <span class="emphasis" id="d2eb16ec_115">(only BSD)</span></p></td></tr><tr id="d2eb16ec_116"><td id="d2eb16ec_117"><p><code class="code" id="d2eb16ec_118">-size P</code></p></td><td id="d2eb16ec_119"><p>Petabytes <span class="emphasis" id="d2eb16ec_120">(only BSD)</span></p></td></tr></tbody></table></div></section><section class="chapter"><h3 id="size_+-" data-toc="size_+-">Size +/-</h3><p id="d2eb16ec_121">Find all bigger than 10MB files</p><div class="code-block" data-lang="bash">
+$ find / -size +10M
+</div><p id="d2eb16ec_123">Find all smaller than 10MB files</p><div class="code-block" data-lang="bash">
+$ find / -size -10M
+</div><p id="d2eb16ec_125">Find all files that are exactly 10M</p><div class="code-block" data-lang="bash">
+$ find / -size 10M
+</div><p id="d2eb16ec_127">Find Size between 100MB and 1GB</p><div class="code-block" data-lang="bash">
+$ find / -size +100M -size -1G
+</div><p id="d2eb16ec_129">The <code class="code" id="d2eb16ec_130">+</code> and <code class="code" id="d2eb16ec_131">-</code> prefixes signify greater than and less than, as usual.</p></section><section class="chapter"><h3 id="names" data-toc="names">Names</h3><p id="d2eb16ec_132">Find files using name in current directory</p><div class="code-block" data-lang="bash">
+$ find . -name tecmint.txt
+</div><p id="d2eb16ec_134">Find files under home directory</p><div class="code-block" data-lang="bash">
+$ find /home -name tecmint.txt
+</div><p id="d2eb16ec_136">Find files using name and ignoring case</p><div class="code-block" data-lang="bash">
+$ find /home -iname tecmint.txt
+</div><p id="d2eb16ec_138">Find directories using name</p><div class="code-block" data-lang="bash">
+$ find / -type d -name tecmint
+</div><p id="d2eb16ec_140">Find php files using name</p><div class="code-block" data-lang="bash">
+$ find . -type f -name tecmint.php
+</div><p id="d2eb16ec_142">Find all php files in directory</p><div class="code-block" data-lang="bash">
+$ find . -type f -name &quot;*.php&quot;
+</div></section><section class="chapter"><h3 id="permissions" data-toc="permissions">Permissions</h3><p id="d2eb16ec_144">Find the files whose permissions are 777.</p><div class="code-block" data-lang="bash">
+$ find . -type f -perm 0777 -print
+</div><p id="d2eb16ec_146">Find the files without permission 777.</p><div class="code-block" data-lang="bash">
+$ find / -type f ! -perm 777
+</div><p id="d2eb16ec_148">Find SUID set files.</p><div class="code-block" data-lang="bash">
+$ find / -perm /u=s
+</div><p id="d2eb16ec_150">Find SGID set files.</p><div class="code-block" data-lang="bash">
+$ find / -perm /g=s
+</div><p id="d2eb16ec_152">Find Read Only files.</p><div class="code-block" data-lang="bash">
+$ find / -perm /u=r
+</div><p id="d2eb16ec_154">Find Executable files.</p><div class="code-block" data-lang="bash">
+$ find / -perm /a=x
+</div></section><section class="chapter"><h3 id="owners-and-groups" data-toc="owners-and-groups">Owners and Groups</h3><p id="d2eb16ec_156">Find single file based on user</p><div class="code-block" data-lang="bash">
+$ find / -user root -name tecmint.txt
+</div><p id="d2eb16ec_158">Find all files based on user</p><div class="code-block" data-lang="bash">
+$ find /home -user tecmint
+</div><p id="d2eb16ec_160">Find all files based on group</p><div class="code-block" data-lang="bash">
+$ find /home -group developer
+</div><p id="d2eb16ec_162">Find particular files of user</p><div class="code-block" data-lang="bash">
+$ find /home -user tecmint -iname &quot;*.txt&quot;
+</div></section><section class="chapter"><h3 id="multiple-filenames" data-toc="multiple-filenames">Multiple filenames</h3><div class="code-block" data-lang="bash">
+$ find . -type f \( -name &quot;*.sh&quot; -o -name &quot;*.txt&quot; \)
+</div><p id="d2eb16ec_165">Find files with <code class="code" id="d2eb16ec_166">.sh</code> and <code class="code" id="d2eb16ec_167">.txt</code> extensions</p></section><section class="chapter"><h3 id="multiple-dirs" data-toc="multiple-dirs">Multiple dirs</h3><div class="code-block" data-lang="bash">
+$ find /opt /usr /var -name foo.scala -type f
+</div><p id="d2eb16ec_169">Find files with multiple dirs</p></section><section class="chapter"><h3 id="empty" data-toc="empty">Empty</h3><div class="code-block" data-lang="bash">
+$ find . -type d -empty
+</div><p id="d2eb16ec_171">Delete all empty files in a directory</p><div class="code-block" data-lang="bash">
+$ find . -type f -empty -delete
+</div></section></section><section class="chapter"><h2 id="find-date-and-time" data-toc="find-date-and-time">Find Date and Time</h2><section class="chapter"><h3 id="means" data-toc="means">Means</h3><div class="table-wrapper"><table class="wide" id="d2eb16ec_173"><thead><tr class="ijRowHead" id="d2eb16ec_174"><th id="d2eb16ec_175"><p>Option</p></th><th id="d2eb16ec_176"><p>Description</p></th></tr></thead><tbody><tr id="d2eb16ec_177"><td id="d2eb16ec_178"><p><code class="code" id="d2eb16ec_179">atime</code></p></td><td id="d2eb16ec_180"><p>access time (last time file </p><p>)</p></td></tr><tr id="d2eb16ec_182"><td id="d2eb16ec_183"><p><code class="code" id="d2eb16ec_184">mtime</code></p></td><td id="d2eb16ec_185"><p>modified time (last time file </p><p>)</p></td></tr><tr id="d2eb16ec_187"><td id="d2eb16ec_188"><p><code class="code" id="d2eb16ec_189">ctime</code></p></td><td id="d2eb16ec_190"><p>changed time (last time file </p><p>)</p></td></tr></tbody></table></div><section class="chapter"><h4 id="example" data-toc="example">Example</h4><div class="table-wrapper"><table class="wide" id="d2eb16ec_192"><thead><tr class="ijRowHead" id="d2eb16ec_193"><th id="d2eb16ec_194"><p>Option</p></th><th id="d2eb16ec_195"><p>Description</p></th></tr></thead><tbody><tr id="d2eb16ec_196"><td id="d2eb16ec_197"><p><code class="code" id="d2eb16ec_198">-mtime +0</code></p></td><td id="d2eb16ec_199"><p>Modified greater than 24 hours ago</p></td></tr><tr id="d2eb16ec_200"><td id="d2eb16ec_201"><p><code class="code" id="d2eb16ec_202">-mtime 0</code></p></td><td id="d2eb16ec_203"><p>Modified between now and 1 day ago</p></td></tr><tr id="d2eb16ec_204"><td id="d2eb16ec_205"><p><code class="code" id="d2eb16ec_206">-mtime -1</code></p></td><td id="d2eb16ec_207"><p>Modified less than 1 day ago (same as <code class="code" id="d2eb16ec_208">-mtime 0</code>)</p></td></tr><tr id="d2eb16ec_209"><td id="d2eb16ec_210"><p><code class="code" id="d2eb16ec_211">-mtime 1</code></p></td><td id="d2eb16ec_212"><p>Modified between 24 and 48 hours ago</p></td></tr><tr id="d2eb16ec_213"><td id="d2eb16ec_214"><p><code class="code" id="d2eb16ec_215">-mtime +1</code></p></td><td id="d2eb16ec_216"><p>Modified more than 48 hours ago</p></td></tr><tr id="d2eb16ec_217"><td id="d2eb16ec_218"><p><code class="code" id="d2eb16ec_219">-mtime +1w</code></p></td><td id="d2eb16ec_220"><p>Last modified more than 1 week ago</p></td></tr><tr id="d2eb16ec_221"><td id="d2eb16ec_222"><p><code class="code" id="d2eb16ec_223">-atime 0</code></p></td><td id="d2eb16ec_224"><p>Last accessed between now and 24 hours ago</p></td></tr><tr id="d2eb16ec_225"><td id="d2eb16ec_226"><p><code class="code" id="d2eb16ec_227">-atime +0</code></p></td><td id="d2eb16ec_228"><p>Accessed more than 24 hours ago</p></td></tr><tr id="d2eb16ec_229"><td id="d2eb16ec_230"><p><code class="code" id="d2eb16ec_231">-atime 1</code></p></td><td id="d2eb16ec_232"><p>Accessed between 24 and 48 hours ago</p></td></tr><tr id="d2eb16ec_233"><td id="d2eb16ec_234"><p><code class="code" id="d2eb16ec_235">-atime +1</code></p></td><td id="d2eb16ec_236"><p>Accessed more than 48 hours ago</p></td></tr><tr id="d2eb16ec_237"><td id="d2eb16ec_238"><p><code class="code" id="d2eb16ec_239">-atime -1</code></p></td><td id="d2eb16ec_240"><p>Accessed less than 24 hours ago (same as <code class="code" id="d2eb16ec_241">-atime 0</code>)</p></td></tr><tr id="d2eb16ec_242"><td id="d2eb16ec_243"><p><code class="code" id="d2eb16ec_244">-ctime -6h30m</code></p></td><td id="d2eb16ec_245"><p>File status changed within the last 6 hours and 30 minutes</p></td></tr></tbody></table></div></section></section><section class="chapter"><h3 id="examples" data-toc="examples">Examples</h3><p id="d2eb16ec_246">Find last 50 days modified files</p><div class="code-block" data-lang="bash">
+$ find / -mtime 50
+</div><p id="d2eb16ec_248">find last 50 days accessed files</p><div class="code-block" data-lang="bash">
+$ find / -atime 50
+</div><p id="d2eb16ec_250">find last 50-100 days modified files</p><div class="code-block" data-lang="bash">
+$ find / -mtime +50 –mtime -100
+</div><p id="d2eb16ec_252">find changed files in last 1 hour</p><div class="code-block" data-lang="bash">
+$ find / -cmin -60
+</div><p id="d2eb16ec_254">find modified files in last 1 hour</p><div class="code-block" data-lang="bash">
+$ find / -mmin -60
+</div><p id="d2eb16ec_256">find accessed files in last 1 hour</p><div class="code-block" data-lang="bash">
+$ find / -amin -60
+</div></section></section><section class="chapter"><h2 id="find-and" data-toc="find-and">Find and</h2><section class="chapter"><h3 id="find-and-delete" data-toc="find-and-delete">Find and delete</h3><p id="d2eb16ec_258">Find and remove multiple files</p><div class="code-block" data-lang="bash">
+$ find . -type f -name &quot;*.mp3&quot; -exec rm -f {} \;
+</div><p id="d2eb16ec_260">Find and remove single file</p><div class="code-block" data-lang="bash">
+$ find . -type f -name &quot;tecmint.txt&quot; -exec rm -f {} \;
+</div><p id="d2eb16ec_262">Find and delete 100mb files</p><div class="code-block" data-lang="bash">
+$ find / -type f -size +100m -exec rm -f {} \;
+</div><p id="d2eb16ec_264">Find specific files and delete</p><div class="code-block" data-lang="bash">
+$ find / -type f -name *.mp3 -size +10m -exec rm {} \;
+</div></section><section class="chapter"><h3 id="find-and-replace" data-toc="find-and-replace">Find and replace</h3><p id="d2eb16ec_266">Find all files and modify the content <code class="code" id="d2eb16ec_267">const</code> to <code class="code" id="d2eb16ec_268">let</code></p><div class="code-block" data-lang="bash">
+$ find ./ -type f -exec sed -i 's/const/let/g' {} \;
+</div><p id="d2eb16ec_270">Find readable and writable files and modify the content <code class="code" id="d2eb16ec_271">old</code> to <code class="code" id="d2eb16ec_272">new</code></p><div class="code-block" data-lang="bash">
+$ find ./ -type f -readable -writable -exec sed -i &quot;s/old/new/g&quot; {} \;
+</div></section><section class="chapter"><h3 id="find-and-rename" data-toc="find-and-rename">Find and rename</h3><p id="d2eb16ec_274">Find and suffix (added <code class="code" id="d2eb16ec_275">.bak</code>)</p><div class="code-block" data-lang="bash">
+$ find . -type f -name 'file*' -exec mv {} {}.bak\;
+</div><p id="d2eb16ec_277">Find and rename extension (<code class="code" id="d2eb16ec_278">.html</code> =&gt; <code class="code" id="d2eb16ec_279">.gohtml</code>)</p><div class="code-block" data-lang="bash">
+$ find ./ -depth -name &quot;*.html&quot; -exec sh -c 'mv &quot;$1&quot; &quot;${1%.html}.gohtml&quot;' _ {} \;
+</div></section><section class="chapter"><h3 id="find-and-move" data-toc="find-and-move">Find and move</h3><div class="code-block" data-lang="bash">
+$ find . -name '*.mp3' -exec mv {} /tmp/music \;
+</div><p id="d2eb16ec_282">Find and move it to a specific directory (<code class="code" id="d2eb16ec_283">/tmp/music</code>)</p></section><section class="chapter"><h3 id="find-and-copy" data-toc="find-and-copy">Find and copy</h3><div class="code-block" data-lang="bash">
+$ find . -name '*2020*.xml' -exec cp -r &quot;{}&quot; /tmp/backup \;
+</div><p id="d2eb16ec_285">Find matching files and copy to a specific directory (<code class="code" id="d2eb16ec_286">/tmp/backup</code>)</p></section><section class="chapter"><h3 id="find-and-concatenate" data-toc="find-and-concatenate">Find and concatenate</h3><p id="d2eb16ec_287">Merge all csv files in the download directory into <code class="code" id="d2eb16ec_288">merged.csv</code></p><div class="code-block" data-lang="bash">
+$ find download -type f -iname '*.csv' | xargs cat &gt; merged.csv
+</div><p id="d2eb16ec_290">Merge all sorted csv files in the download directory into <code class="code" id="d2eb16ec_291">merged.csv</code></p><div class="code-block" data-lang="bash">
+$ find download -type f -iname '*.csv' | sort | xargs cat &gt; merged.csv
+</div></section><section class="chapter"><h3 id="find-and-sort" data-toc="find-and-sort">Find and sort</h3><p id="d2eb16ec_293">Find and sort in ascending</p><div class="code-block" data-lang="bash">
+$ find . -type f | sort
+</div><p id="d2eb16ec_295">find and sort descending</p><div class="code-block" data-lang="bash">
+$ find . -type f | sort -r
+</div></section><section class="chapter"><h3 id="find-and-chmod" data-toc="find-and-chmod">Find and chmod</h3><p id="d2eb16ec_297">Find files and set permissions to 644.</p><div class="code-block" data-lang="bash">
+$ find / -type f -perm 0777 -print -exec chmod 644 {} \;
+</div><p id="d2eb16ec_299">Find directories and set permissions to 755.</p><div class="code-block" data-lang="bash">
+$ find / -type d -perm 777 -print -exec chmod 755 {} \;
+</div></section><section class="chapter"><h3 id="find-and-compress" data-toc="find-and-compress">Find and compress</h3><p id="d2eb16ec_301">Find all <code class="code" id="d2eb16ec_302">.java</code> files and compress it into <code class="code" id="d2eb16ec_303">java.tar</code></p><div class="code-block" data-lang="bash">
+$ find . -type f -name &quot;*.java&quot; | xargs tar cvf java.tar
+</div><p id="d2eb16ec_305">Find all <code class="code" id="d2eb16ec_306">.csv</code> files and compress it into <code class="code" id="d2eb16ec_307">cheatsheets.zip</code></p><div class="code-block" data-lang="bash">
+$ find . -type f -name &quot;*.csv&quot; | xargs zip cheatsheets.zip
+</div></section></section><div class="last-modified">Last modified: 06 March 2024</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="ssh.html" class="navigation-links__prev">SSH</a><a href="regex.html" class="navigation-links__next">RegEX</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.6.6-b205/app.js"></script></body></html>
