@@ -12,10 +12,10 @@
         <toc-element topic="Tailwindcss-Font.md"/>
     </toc-element>
     <toc-element topic="thiet-lap-server-ubuntu.md">
-        <toc-element topic="Cài-đặt-Openvpn.md"/>
-        <toc-element topic="Cài-đặt-Docker.md"/>
-        <toc-element topic="Cài-đặt-Oh-My-ZSH.md"/>
         <toc-element topic="thiet-lap-server-ubuntu-Cai-dat-zsh.md"/>
+        <toc-element topic="Cài-đặt-Oh-My-ZSH.md"/>
+        <toc-element topic="Cài-đặt-Docker.md"/>
+        <toc-element topic="Cài-đặt-Openvpn.md"/>
     </toc-element>
     <toc-element topic="Setup-du-an-React.md">
         <toc-element topic="Setup-du-an-React_tao_du_an.md">
