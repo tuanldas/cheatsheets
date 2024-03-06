@@ -16,6 +16,7 @@
         <toc-element topic="Cài-đặt-Oh-My-ZSH.md"/>
         <toc-element topic="Cài-đặt-Docker.md"/>
         <toc-element topic="Cài-đặt-Openvpn.md"/>
+        <toc-element topic="Phân-quyền-folder-ssh.md"/>
     </toc-element>
     <toc-element topic="Setup-du-an-React.md">
         <toc-element topic="Setup-du-an-React_tao_du_an.md">

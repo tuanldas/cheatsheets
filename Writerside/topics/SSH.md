@@ -160,7 +160,7 @@ $ ssh-copy-id -i ~/.ssh/id_rsa.pub user@server
 SSH keygen
 ---------------
 
-### ssh-keygen {id="ssh-keygen_1"}
+### Command ssh-keygen
 
 ```shell script
 $ ssh-keygen -t rsa -b 4096 -C "your@mail.com" 
@@ -209,6 +209,10 @@ Change private key passphrase
 ```shell script
 $ ssh-keygen -p -f ~/.ssh/id_rsa
 ```
+
+Tạo ssh key với kiểu ed25519
+
+```ssh-keygen -t ed25519 -C "gleb@reys.net"```
 
 ### Key type
 
