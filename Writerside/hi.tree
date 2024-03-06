@@ -11,12 +11,19 @@
         <toc-element topic="Tailwindcss-Spacing.md"/>
         <toc-element topic="Tailwindcss-Font.md"/>
     </toc-element>
+    <toc-element topic="thiet-lap-server-ubuntu.md">
+        <toc-element topic="Cài-đặt-Openvpn.md"/>
+        <toc-element topic="Cài-đặt-Docker.md"/>
+        <toc-element topic="Cài-đặt-Oh-My-ZSH.md"/>
+        <toc-element topic="thiet-lap-server-ubuntu-Cai-dat-zsh.md"/>
+    </toc-element>
     <toc-element topic="Setup-du-an-React.md">
         <toc-element topic="Setup-du-an-React_tao_du_an.md">
         </toc-element>
         <toc-element topic="Setup-du-an-React_them_tailwind.md"/>
         <toc-element topic="Setup-du-an-React_them-daisyui.md"/>
         <toc-element topic="Setup-du-an-React_them_redux.md"/>
+        <toc-element topic="Setup-du-an-React-them-react-router-dom.md"/>
     </toc-element>
     <toc-element topic="Sublime-Text.md"/>
     <toc-element topic="Bash.md">
@@ -35,7 +42,6 @@
     <toc-element topic="Cron.md"/>
     <toc-element topic="Homebrew.md">
     </toc-element>
-    <toc-element topic="Sed.md"/>
     <toc-element topic="Rsync.md"/>
     <toc-element topic="Docker.md"/>
     <toc-element topic="Postman.md"/>
