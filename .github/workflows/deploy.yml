@@ -26,61 +26,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Build Writerside
-        uses: JetBrains/writerside-github-action@v4
-        with:
-          instance: ${{ env.INSTANCE }}
-          artifact: ${{ env.ARTIFACT }}
-          docker-version: ${{ env.DOCKER_VERSION }}
-
-      - name: Install SSH Key
-        uses: shimataro/ssh-key-action@v2
-        with:
-          key: ${{ env.SSH_PRIVATE_KEY }}
-          known_hosts: unnecessary
-
-      - name: Adding Known Hosts
-        run: ssh-keyscan -p ${{ env.SSH_PORT }} -H ${{ secrets.HOST }} >> ~/.ssh/known_hosts
-
-      - name: Kiểm tra folder build
-        uses: appleboy/ssh-action@v1.0.0
-        with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          key: ${{ env.SSH_PRIVATE_KEY }}
-          port: ${{ secrets.PORT }}
-          script: |
-            if [ -d "${{ env.PROJECT_PATH_BUILDS }} " ]; then
-              echo "Is a directory."
-            else
-              mkdir ${{ env.PROJECT_PATH_BUILDS }} 
-              echo "Is a directory."
-            fi
-
-      - name: Deploy with rsync
-        run: rsync -avz -e "ssh -p ${{ env.SSH_PORT }}" artifacts/${{ env.ARTIFACT }} ${{ env.SSH_USERNAME }}@${{ secrets.HOST }}:${{ env.PROJECT_PATH_BUILDS }}/${{ env.ARTIFACT }}
-
-      - name: Deploy
-        uses: appleboy/ssh-action@v1.0.0
-        with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          key: ${{ env.SSH_PRIVATE_KEY }}
-          port: ${{ secrets.PORT }}
-          script: |
-            cd ${{ env.PROJECT_PATH_BUILDS }}
-            unzip -o ${{ env.PROJECT_PATH_BUILDS }}/${{ env.ARTIFACT }} -d ${{ env.PROJECT_PATH_SRC }}
-
-      - name: Xóa các bản build
-        uses: appleboy/ssh-action@v1.0.0
-        with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          key: ${{ env.SSH_PRIVATE_KEY }}
-          port: ${{ secrets.PORT }}
-          script: |
-            rm -rf ${{ env.PROJECT_PATH_BUILDS }}
-
       - name: Dừng các container đang chạy
         uses: appleboy/ssh-action@v1.0.0
         with:
@@ -90,15 +35,6 @@ jobs:
           port: ${{ secrets.PORT }}
           script: |
             cd ${{ env.PROJECT_PATH }}
-            docker compose down -v --rmi all
-
-      - name: Khởi động lại các dịch vụ
-        uses: appleboy/ssh-action@v1.0.0
-        with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          key: ${{ env.SSH_PRIVATE_KEY }}
-          port: ${{ secrets.PORT }}
-          script: |
-            cd ${{ env.PROJECT_PATH }}
+            docker compose down
+            docker compose build
             docker compose up -d
