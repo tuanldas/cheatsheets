@@ -11,7 +11,7 @@ Sass Basics
 
 ### Variables
 
-```scss
+```
 $defaultLinkColor: #46EAC2;
 
 a {
@@ -21,7 +21,7 @@ a {
 
 ### String interpolation
 
-```scss
+```
 $wk: -webkit-;
 
 .rounded-box {
@@ -33,7 +33,7 @@ $wk: -webkit-;
 
 ### Comments
 
-```scss
+```
 /*
  Block comments
  Block comments
@@ -48,7 +48,7 @@ $wk: -webkit-;
 
 ### Mixins
 
-```scss
+```
 @mixin heading-font {
     font-family: sans-serif;
     font-weight: bold;
@@ -57,13 +57,13 @@ h1 {
     @include heading-font;
 }
 ```
-See: [Mixins](#sass-mixins.)
+See: [Mixins](#sass-mixins)
 
 
 
 ### Nesting {.row-span-2}
 
-```scss
+```
 .markdown-body {
     a {
       color: blue;
@@ -75,7 +75,7 @@ See: [Mixins](#sass-mixins.)
 ```
 
 #### to properties
-```scss
+```
 text: {
     // like text-align: center
     align: center;          
@@ -87,13 +87,13 @@ text: {
 
 ### Extend
 
-```scss
+```
 .button {
     ···
 }
 ```
 
-```scss
+```
 .push-button {
     @extend .button;
 }
@@ -101,7 +101,7 @@ text: {
 
 ### @import
 
-```scss
+```
 @import './other_sass_file';
 @import '/code', 'lists';
 
@@ -119,13 +119,13 @@ Sass Mixins
 
 ### Parameters
 
-```scss
+```
 @mixin font-size($n) {
     font-size: $n * 1.2em;
 }
 ```
 
-```scss
+```
 body {
     @include font-size(2);
 }
@@ -133,13 +133,13 @@ body {
 
 ### Default values
 
-```scss
+```
 @mixin pad($n: 10px) {
     padding: $n;
 }
 ```
 
-```scss
+```
 body {
     @include pad(15px);
 }
@@ -147,7 +147,7 @@ body {
 
 ### Default variable
 
-```scss
+```
 $default-padding: 10px;
 
 @mixin pad($n: $default-padding) {
@@ -165,7 +165,7 @@ Sass Color functions {.cols-2}
 
 ### rgba
 
-```scss
+```
 rgb(100, 120, 140)
 rgba(100, 120, 140, .5)
 rgba($color, .5)
@@ -173,30 +173,30 @@ rgba($color, .5)
 
 ### Mixing
 
-```scss
+```
 mix($a, $b, 10%)   // 10% a, 90% b
 ```
 
 ### Modifying HSLA
 
-```scss
+```
 darken($color, 5%)
 lighten($color, 5%)
 ```
 
-```scss
+```
 saturate($color, 5%)
 desaturate($color, 5%)
 grayscale($color)
 ```
 
-```scss
+```
 adjust-hue($color, 15deg)
 complement($color)    // like adjust-hue(_, 180deg)
 invert($color)
 ```
 
-```scss
+```
 fade-in($color, .5)   // aka opacify()
 fade-out($color, .5)  // aka transparentize()
 rgba($color, .5)      // sets alpha to .5
@@ -206,7 +206,7 @@ rgba($color, .5)      // sets alpha to .5
 
 #### HSLA
 
-```scss
+```
 hue($color)         // 0deg..360deg
 saturation($color)  // 0%..100%
 lightness($color)   // 0%..100%
@@ -215,7 +215,7 @@ alpha($color)       // 0..1 (aka opacity())
 
 #### RGB
 
-```scss
+```
 red($color)         // 0..255
 green($color)
 blue($color)
@@ -225,7 +225,7 @@ See: [hue()](http://sass-lang.com/documentation/Sass/Script/Functions.html#hue-i
 
 ### Adjustments
 
-```scss
+```
 // Changes by fixed amounts
 adjust-color($color, $blue: 5)
 adjust-color($color, $lightness: -30%) // darken(_, 30%)
@@ -233,12 +233,12 @@ adjust-color($color, $alpha: -0.4)     // fade-out(_, .4)
 adjust-color($color, $hue: 30deg)      // adjust-hue(_, 15deg)
 ```
 
-```scss
+```
 // Changes via percentage
 scale-color($color, $lightness: 50%)
 ```
 
-```scss
+```
 // Changes one property completely
 change-color($color, $hue: 180deg)
 change-color($color, $blue: 250)
@@ -251,17 +251,17 @@ Sass Other functions {.cols-2}
 
 ### Strings
 
-```scss
+```
 unquote('hello')
 quote(hello)
 ```
 
-```scss
+```
 to-upper-case(hello)
 to-lower-case(hello)
 ```
 
-```scss
+```
 str-length(hello world)
 str-slice(hello, 2, 5)     // "ello" - it's 1-based, not 0-based
 str-insert("abcd", "X", 1) // "Xabcd"
@@ -269,43 +269,43 @@ str-insert("abcd", "X", 1) // "Xabcd"
 
 ### Units
 
-```scss
+```
 unit(3em)        // 'em'
 unitless(100px)  // false
 ```
 
 ### Numbers
 
-```scss
+```
 floor(3.5)
 ceil(3.5)
 round(3.5)
 abs(3.5)
 ```
 
-```scss
+```
 min(1, 2, 3)
 max(1, 2, 3)
 ```
 
-```scss
+```
 percentage(.5)   // 50%
 random(3)        // 0..3
 ```
 
 ### Misc
 
-```scss
+```
 variable-exists(red)    // checks for $red
 mixin-exists(red-text)  // checks for @mixin red-text
 function-exists(redify)
 ```
 
-```scss
+```
 global-variable-exists(red)
 ```
 
-```scss
+```
 selector-append('.menu', 'li', 'a')   // .menu li a
 selector-nest('.menu', '&:hover li')  // .menu:hover li
 selector-extend(...)
@@ -319,7 +319,7 @@ Sass Feature checks {.cols-2}
 
 ### Feature check
 
-```scss
+```
 feature-exists(global-variable-shadowing)
 ```
 
@@ -335,7 +335,7 @@ Sass Loops
 
 ### For loops
 
-```scss
+```
 @for $i from 1 through 4 {
     .item-#{$i} { left: 20px * $i; }
 }
@@ -343,7 +343,7 @@ Sass Loops
 
 ### Each loops (simple)
 
-```scss
+```
 $menu-items: home about contact;
 
 @each $item in $menu-items {
@@ -354,7 +354,7 @@ $menu-items: home about contact;
 ```
 
 ### Each loops (nested)
-```scss
+```
 $backgrounds: (home, 'home.jpg'),
               (about, 'about.jpg');
 
@@ -367,7 +367,7 @@ $backgrounds: (home, 'home.jpg'),
 
 ### While loops
 
-```scss
+```
 $i: 6;
 @while $i > 0 {
     .item-#{$i} { width: 2em * $i; }
@@ -380,7 +380,7 @@ Sass Other features
 
 ### Conditionals {.row-span-2}
 
-```scss
+```
 @if $position == 'left' {
      position: absolute;
      left: 0;
@@ -396,7 +396,7 @@ Sass Other features
 
 ### Interpolation
 
-```scss
+```
 .#{$klass} { ... }      // Class
 call($function-name)    // Functions
 
@@ -407,7 +407,7 @@ url("#{$background}.jpg")
 
 ### Lists
 
-```scss
+```
 $list: (a b c);
 
 nth($list, 1)  // starts with 1
@@ -418,7 +418,7 @@ length($list)
 
 ### Maps
 
-```scss
+```
 $map: (key1: value1, key2: value2, key3: value3);
 
 map-get($map, key1)

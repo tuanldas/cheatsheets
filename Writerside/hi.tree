@@ -38,7 +38,6 @@
         <toc-element topic="Bash-Functions.md"/>
         <toc-element topic="Bash-Options.md"/>
         <toc-element topic="Bash-History.md"/>
-        <toc-element topic="Bash-Miscellaneous.md"/>
     </toc-element>
     <toc-element topic="Cron.md"/>
     <toc-element topic="Homebrew.md">

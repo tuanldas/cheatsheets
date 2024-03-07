@@ -9,7 +9,6 @@
 3. [Functions](Bash-Functions.md)
 3. [Options](Bash-Options.md)
 3. [History](Bash-History.md)
-3. [Miscellaneous](Bash-Miscellaneous.md)
 
 ## Also see
 * [Devhints](https://devhints.io/bash) _(devhints.io)_

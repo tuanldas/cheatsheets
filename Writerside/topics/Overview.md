@@ -322,6 +322,7 @@ HTML5 Tags
 
 ### HTML5 mark
 
+
 ```html
 
 <p>I Love
@@ -329,7 +330,7 @@ HTML5 Tags
 </p>
 ```
 
-<p>I Love <mark>CheatSheets.zip</mark></p>
+```<p>I Love <mark>CheatSheets.zip</mark></p>```
 
 
 HTML Tables
@@ -641,35 +642,35 @@ see: [Attributes for the \<input> element](https://developer.mozilla.org/en-US/d
 
 ### Input types
 
-|                   |                                                                                                                                          |
-|-------------------|------------------------------------------------------------------------------------------------------------------------------------------|
-| `type="checkbox"` | <input type="checkbox" class="border border-slate-400">                                                                                  |
-| `type="radio"`    | <input type="radio" class="border border-slate-400">                                                                                     |
-| `type="file"`     | <input type="file" class="border border-slate-400">                                                                                      |
-| `type="hidden"`   | <input type="hidden" class="border border-slate-400">                                                                                    |
-| `type="text"`     | <input type="text" class="border border-slate-400">                                                                                      |
-| `type="password"` | <input type="password" class="border border-slate-400">                                                                                  |
-| `type="image"`    | <input type="image" src="https://raw.githubusercontent.com/mdn/learning-area/master/html/forms/image-type-example/login.png" width="70"> |
-| `type="reset"`    | <input type="reset" class="border border-slate-400">                                                                                     |
-| `type="button"`   | <input type="button" class="border border-slate-400">Button</input>                                                                      |
-| `type="submit"`   | <input type="submit" class="border border-slate-400">                                                                                    |
+|                   |                                                                                                                                                |
+|-------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
+| `type="checkbox"` | ```<input type="checkbox" class="border border-slate-400">```                                                                                  |
+| `type="radio"`    | ```<input type="radio" class="border border-slate-400">```                                                                                     |
+| `type="file"`     | ```<input type="file" class="border border-slate-400">```                                                                                      |
+| `type="hidden"`   | ```<input type="hidden" class="border border-slate-400">```                                                                                    |
+| `type="text"`     | ```<input type="text" class="border border-slate-400">```                                                                                      |
+| `type="password"` | ```<input type="password" class="border border-slate-400">```                                                                                  |
+| `type="image"`    | ```<input type="image" src="https://raw.githubusercontent.com/mdn/learning-area/master/html/forms/image-type-example/login.png" width="70">``` |
+| `type="reset"`    | ```<input type="reset" class="border border-slate-400">```                                                                                     |
+| `type="button"`   | ```<input type="button" class="border border-slate-400">Button</input>```                                                                      |
+| `type="submit"`   | ```<input type="submit" class="border border-slate-400">```                                                                                    |
 
 #### New Input Types in HTML5
 
-|                         |                                                                      |
-|-------------------------|----------------------------------------------------------------------|
-| `type="color"`          | <input type="color" value="#0FB881" class="border border-slate-400"> |
-| `type="date"`           | <input type="date" class="border border-slate-400">                  |
-| `type="time"`           | <input type="time" class="border border-slate-400">                  |
-| `type="month"`          | <input type="month" class="border border-slate-400">                 |
-| `type="datetime-local"` | <input type="datetime-local" class="border border-slate-400">        |
-| `type="week"`           | <input type="week" class="border border-slate-400">                  |
-| `type="email"`          | <input type="email" class="border border-slate-400">                 |
-| `type="tel"`            | <input type="tel" class="border border-slate-400">                   |
-| `type="url"`            | <input type="url" class="border border-slate-400">                   |
-| `type="number"`         | <input type="number" class="border border-slate-400">                |
-| `type="search"`         | <input type="search" class="border border-slate-400">                |
-| `type="range"`          | <input type="range" class="border border-slate-400">                 |
+|                         |                                                                            |
+|-------------------------|----------------------------------------------------------------------------|
+| `type="color"`          | ```<input type="color" value="#0FB881" class="border border-slate-400">``` |
+| `type="date"`           | ```<input type="date" class="border border-slate-400">```                  |
+| `type="time"`           | ```<input type="time" class="border border-slate-400">```                  |
+| `type="month"`          | ```<input type="month" class="border border-slate-400">```                 |
+| `type="datetime-local"` | ```<input type="datetime-local" class="border border-slate-400">```        |
+| `type="week"`           | ```<input type="week" class="border border-slate-400">```                  |
+| `type="email"`          | ```<input type="email" class="border border-slate-400">```                 |
+| `type="tel"`            | ```<input type="tel" class="border border-slate-400">```                   |
+| `type="url"`            | ```<input type="url" class="border border-slate-400">```                   |
+| `type="number"`         | ```<input type="number" class="border border-slate-400">```                |
+| `type="search"`         | ```<input type="search" class="border border-slate-400">```                |
+| `type="range"`          | ```<input type="range" class="border border-slate-400">```                 |
 
 ### Input CSS selectors
 
@@ -685,7 +686,7 @@ HTML meta Tags {.cols-2}
 
 ### Meta tags {.row-span-3}
 
-The meta tag describes meta data within an HTML document. It explains additional material about the HTML.
+The meta tag describes metadata within an HTML document. It explains additional material about the HTML.
 
 ```html
 

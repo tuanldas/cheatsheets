@@ -2,9 +2,8 @@ services:
   app:
     build:
       context: .
-    volumes:
-      - ./:/app/html
-    command: ["http-server", "./src"]
+    ports:
+      - 8080:80
     networks:
       - publish
 
