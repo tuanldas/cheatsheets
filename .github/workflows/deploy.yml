@@ -26,7 +26,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Dừng các container đang chạy
+      - name: Build các dịch vụ
         uses: appleboy/ssh-action@v1.0.0
         with:
           host: ${{ secrets.HOST }}
@@ -35,6 +35,8 @@ jobs:
           port: ${{ secrets.PORT }}
           script: |
             cd ${{ env.PROJECT_PATH }}
-            docker compose down
+            git fetch
+            git checkout ${{ github.sha }}
+            docker compose down -v --rmi all
             docker compose build
             docker compose up -d
