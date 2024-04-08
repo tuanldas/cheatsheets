@@ -30,6 +30,19 @@ export type RootState = ReturnType<typeof store.getState>
 export type AppDispatch = typeof store.dispatch
 ```
 
+Thêm cấu hình hook
+Tạo file ```src/store/index.tsx```
+```Typescript
+import {useDispatch, useSelector} from 'react-redux';
+import {store} from './index';
+
+export type AppDispatch = typeof store.dispatch;
+export type RootState = ReturnType<typeof store.getState>;
+
+export const useAppDispatch = useDispatch.withTypes<AppDispatch>();
+export const useAppSelector = useSelector.withTypes<RootState>()
+```
+
 Cấu hình Provide redux cho react.  
 Thêm cấu hình vào file ```index.tsx hoặc main.tsx```
 
