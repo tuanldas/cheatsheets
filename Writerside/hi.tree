@@ -63,5 +63,7 @@
     <toc-element topic="Overview.md">
         <toc-element topic="HTML-Characters-Entities.md"/>
     </toc-element>
-    <toc-element topic="C.md"/>
+    <toc-element topic="C.md">
+        <toc-element topic="C-Toan_tu.md"/>
+    </toc-element>
 </instance-profile>
