@@ -61,6 +61,6 @@ void myFunction() {
 }
 ```
 
-### Toán tử
+## Toán tử
 
 [Toán tử](C-Toan_tu.md)
