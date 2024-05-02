@@ -44,3 +44,14 @@ scanf("%f", &salary);
 
 ## Định dạng kiểu dữ liệu
 
+| Ký hiệu  |                                              |
+|----------|----------------------------------------------|
+| ```%c``` | Ký tự đơn                                    |
+| ```%s``` | Chuỗi                                        |
+| ```%d``` | Số nguyên hệ 10 có dấu                       |
+| ```%f``` | Số chấm động (VD 7.44 khi in sẽ ra 7.440000) |
+| ```%e``` | Số chấm động (ký hiệu có số mũ)              |
+| ```%g``` | Số chấm động (VD 7.44 khi in sẽ in ra 7.44)  |
+| ```%x``` | Số nguyên hex không dấu (hệ 16)              |
+| ```%o``` | Số nguyên bát phân không dấu (hệ 8)          |
+| ```%p``` | Địa chỉ con trỏ                              |
