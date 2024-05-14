@@ -12,7 +12,7 @@ Cài đặt
 Sử dụng đặt trên ubuntu
 
 ```Bash
-apt-get install rsysnc
+apt-get install rsync
 ```
 
 {prompt="$"}
