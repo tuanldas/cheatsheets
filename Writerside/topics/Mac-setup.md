@@ -28,3 +28,14 @@ send hex code
 ```
 
 > Lưu ý nút opction có thể tùy ý thay đổi để phù hợp với bản thân
+> 
+
+## Các phần mềm thông dụng
+
+### Tạo boot window
+
+[WinDiskWriter](https://github.com/TechUnRestricted/WinDiskWriter)
+
+### Ứng dụng mở rộng tính năng spotlight
+
+[raycast](https://www.raycast.com/)

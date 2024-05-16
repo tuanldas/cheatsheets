@@ -69,6 +69,17 @@
         <toc-element topic="C-Main-Function.md"/>
         <toc-element topic="In-va-doc-kieu-du-lieu.md"/>
         <toc-element topic="C-Toan_tu.md"/>
-        <toc-element topic="C-Ham-Function.md"/>
+        <toc-element topic="C-Ham-Function.md">
+        </toc-element>
+        <toc-element topic="C-Chuoi.md"/>
+        <toc-element topic="C-Array.md"/>
+        <toc-element topic="C-Mang-hai-chieu-2D-Array.md"/>
+        <toc-element topic="C-Cau-lenh-dieu-kien-Conditional-Statement.md"/>
+        <toc-element topic="C-Vong-lap-Loop.md"/>
+        <toc-element topic="C-Struct-Cau-truc.md"/>
+        <toc-element topic="C-Enum-Liet-ke.md"/>
+        <toc-element topic="C-Thu-vien-Library.md"/>
+        <toc-element topic="C-Con-tro-Pointer.md"/>
+        <toc-element topic="C-File-I-O-Input-Output.md"/>
     </toc-element>
 </instance-profile>
