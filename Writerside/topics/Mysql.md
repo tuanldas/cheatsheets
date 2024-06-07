@@ -1151,4 +1151,4 @@ MySQL Functions & Operators
 Also see
 --------
 
-- [Regex in MySQL](RegEX.md#regex-in-mysql) _(cheatsheets.zip)_
+- [Regex in MySQL](RegEX.md) _(cheatsheets.zip)_

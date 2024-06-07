@@ -46,7 +46,7 @@ Getting Started {id="getting-started_1"}
 - \$
 - \\
 - \?
-  
+
 Escape these special characters with `\`
 
 ### Meta Sequences
@@ -326,17 +326,6 @@ In `[ ]` always escape `. \ ]` and sometimes `^ - .`
 | `^[a-zA-Z]{4,20}$` | String must have 4-20 letters                          |
 | `^[A-Z]          ` | String must begin with capital letter                  |
 | `[\.!?"')]$      ` | String must end with terminal puncutation              |
-
-### Modifiers
-
-| Pattern             | Meaning                                                  |
-|---------------------|----------------------------------------------------------|
-| `(?i)`[a-z]*`(?-i)` | Ignore case ON / OFF                                     |
-| `(?s)`.*`(?-s)`     | Match multiple lines (causes . to match newline)         |
-| `(?m)`^.*;$`(?-m)`  | <yel>^</yel> & <yel>$</yel> match lines not whole string |
-| `(?x)`              | #free-spacing mode, this EOL comment ignored             |
-| `(?-x)`             | free-spacing mode OFF                                    |
-| /regex/`ismx`       | Modify mode for entire string                            |
 
 ### Groups
 

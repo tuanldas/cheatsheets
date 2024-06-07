@@ -29,7 +29,7 @@ struct Person {
 
 ## Khai báo biến kiểu struct trong C
 
-```Cstruct Person
+```C
 {
     int id;
     char firstName[20];
