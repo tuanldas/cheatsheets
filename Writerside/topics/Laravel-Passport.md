@@ -6,7 +6,7 @@ Cài đặt
 ### Cài đặt bằng composer
 
 ```
-composer require laravel/passport
+php artisan install:api --passport
 ```
 
 ```

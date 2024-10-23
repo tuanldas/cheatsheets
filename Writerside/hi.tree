@@ -21,6 +21,7 @@
         <toc-element topic="Cai-dat-Docker.md"/>
         <toc-element topic="Cai-dat-Openvpn.md"/>
         <toc-element topic="Phan-quyen-folder-ssh.md"/>
+        <toc-element topic="Cau-Hinh-Swap-Memory.md"/>
     </toc-element>
     <toc-element topic="Bash.md">
         <toc-element topic="Bash-Getting-Started.md">
